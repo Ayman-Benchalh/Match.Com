@@ -1,5 +1,8 @@
 <?php
+namespace App\Http\Controllers;
+namespace App\Http\Controllers\GlobalController;
 
+use App\Http\Controllers\GlobalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Lading_Page');
-});
+Route::get('/',[GlobalController ::class,"index" ]);
+
+Route::get('/login',[GlobalController::class,'login'])->name("loginPage");
+Route::get('/Create_Acount',[GlobalController::class,'Create_Acount'])->name("CreateAcountPage");
