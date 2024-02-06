@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root{
+    --bgColo: #030637;
+    --verbel_2 : #ffff;
+    --font_k2d :'K2D', sans-serif;;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bgColo);
+}
+.MatchCom{
+    color: #ffff;
+    font-size: 48px;
+    font-family: var(--font_k2d);
+}
+
