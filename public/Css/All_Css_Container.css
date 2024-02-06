@@ -13,7 +13,7 @@
 }
 .container{
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     background-color: var(--bgColo);
 }
 .frame1{
@@ -180,7 +180,7 @@ justify-content: center;
 
 .frame2{
     width: 100%;
-    height: 220px;
+    height: auto;
     background-color: #720455;
 
 }
@@ -191,15 +191,168 @@ justify-content: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 50px;
 
 }
 .frame2 .gourpecardimg .cardimg{
 width: 230px;
 height: 182px;
+padding: 15px 0;
 
 }
 .frame2 .gourpecardimg .cardimg img{
 width: 100%;
 
+}
+
+.frame3 .title{
+    width: 100%;
+    height: 150px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font_k2d);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.frame3 .prtyForCardImg{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+background-color: var(--verbel_3);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+padding: 20px 0;
+}
+.frame3 .prtyForCardImg .CardImgMovie{
+    width: 350px;
+
+}
+.frame3 .prtyForCardImg .CardImgMovie img{
+    width: 100%;
+    height: 100%;
+
+}
+.frame4{
+    width: 100%;
+    height: auto;
+    background-color: #ae78c600;
+}
+.frame4 .title{
+    width: 706px;
+    height: 120px;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font_k2d);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+       margin: auto;
+
+}
+.frame4 .partyForCradCOLL{
+width: 100%;
+height: 90%;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+
+background: #3c075300;
+}
+.frame4 .partyForCradCOLL .Cardplan{
+    width: auto;
+    height: auto;
+background-color: #72045500;
+}
+.frame4 .partyForCradCOLL .Cardplan:nth-child(2){
+    background-color: rgba(41, 41, 225, 0);
+    width: 70%;
+
+
+}
+.frame4 .partyForCradCOLL .Cardplan:nth-child(2) img{
+width: 100%;
+}
+.frame4 .partyForCradCOLL .Cardplan:nth-child(1){
+    background-color: rgba(35, 35, 59, 0);
+width: 30%;
+display: flex;
+
+}
+.frame4 .partyForCradCOLL .Cardplan:nth-child(1) img{
+
+width: 100%;
+
+}
+.frame4 .partyForCradCOLL .Cardplan:nth-child(3){
+    background-color: rgba(0, 0, 255, 0);
+width: 70%;
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: row;
+gap: 10px;
+}
+/* .frame4 .partyForCradCOLL .Cardplan:nth-child(3) .Cardplan1{
+background-color: rgba(127, 255, 212, 0);
+width: 30%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+ */
+ .Cardplan2{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #3c075300;
+ }
+
+ .Cardplan1{
+height: 350px;
+    background-color: #3c075300;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar{
+width: .7em;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: var(--verbel_2);
+}
+::-webkit-scrollbar-track{
+    background-color:var(--bgColo);
 }
