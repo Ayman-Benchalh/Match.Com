@@ -7,6 +7,10 @@
     --font_k2d :'K2D', sans-serif;
 
 }
+::selection{
+    background-color: var(--verbel_3);
+    color: #eee;
+}
 *{
     margin: 0;
     padding: 0;
@@ -334,8 +338,111 @@ height: 350px;
  }
 
 
+ .frame5{
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+ }
+ .frame5 .title{
+    width: 706px;
+    height: 164px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font_k2d);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: auto;
+ }
+ .frame5 .party{
+    width: 90%;
+   height: 100%;
+    background-color: #910a6600;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+   
+ }
+ .frame5 .party .content1{
+width: 40%;
+height: auto;
+background-color: rgba(137, 43, 226, 0);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 100px;
+padding: 70px 0;
+
+ }
+ .frame5 .party .content2{
+width: 10%;
+height: 100%;
+background-color: rgba(8, 133, 210, 0);
+display: flex;
+justify-content: center;
+align-items: center;
+ }
+ .frame5 .party .content2 .liner{
+width: 20px;
+height: 1300px;
+background-color: #910A67A3;
+border-radius: 20px;
+   
+ }
+ .frame5 .party .content3{
+width: 40%;
+height: 700px;
+background-color: rgba(226, 223, 43, 0);
+display: flex;
+gap: 100px;
+   flex-direction: column;
+   padding: 70px 0;
+ }
 
 
+ .frame6{
+    width: 100%;
+    min-height: 500px;
+    background-color: rgba(0, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+ }
+ .frame6 .party{
+     
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px 0 ;
+    background-color: rgba(137, 43, 226, 0);
+    
+ }
+ .frame7{
+    width: 100%;
+    height: 60px;
+    
+ }
+ .frame7 .copyrghit{
+    width: 90%;
+    color: #FFF;
+    font-family: var(--font_k2d);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2.2px;
+    margin: auto;
+    padding: 10px;
+ }
 
 
 

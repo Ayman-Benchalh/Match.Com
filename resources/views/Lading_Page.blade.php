@@ -78,6 +78,33 @@
         </div>
         </div>
     </div>
+    <div class="frame5">
+        <div class="title">BUILT FOR STABILITY AND PERFORMANCE</div>
+        <div class="party">
+            <div class="content1">
+                <div class="contentcard"><img src="{{ url('Image/work_on_all_devices.svg') }}" alt="card image"></div>
+                <div class="contentcard"><img src="{{ url('Image/immediate_activation.svg') }}" alt="card image"></div>
+                <div class="contentcard"><img src="{{ url('Image/Friendly_Support.svg') }}" alt="card image"></div>
+            </div>
+            <div class="content2"> <div class="liner"></div></div>
+            <div class="content3">
+                <div class="contentcard"><img src="{{ url('Image/free_intalltion.svg') }}" alt="card image"></div>
+                <div class="contentcard"><img src="{{ url('Image/fast_and_stable_server.svg') }}" alt="card image"></div>
+            </div>
+        </div>
+    </div>
+    <div class="frame6">
+        <div class="party">
+            <div class="contentcardimag"><img src="{{ url('Image/aboute.svg') }}" alt="footer image card"></div>
+            <div class="contentcardimag"><img src="{{ url('Image/useful.svg') }}" alt="footer image card"></div>
+            <div class="contentcardimag"><img src="{{ url('Image/contact.svg') }}" alt="footer image card"></div>
+        </div>
+    </div>
+    <div class="frame7">
+        <div class="copyrghit">
+            Copyright   <i class="fa-solid fa-copyright"></i>  Match.Com
+        </div>
+    </div>
 </div>  
 </body>
 </html>
