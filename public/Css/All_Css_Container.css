@@ -196,10 +196,10 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 100px;
     background-color: rgba(210, 105, 30, 0);
     transition: all 5s ease;
-    animation:4s linear  cardsrcol;
+    animation:10s linear infinite cardsrcol;
     overflow: hidden;
 }
  @keyframes cardsrcol {
@@ -209,7 +209,7 @@ justify-content: center;
     }
   
     100% {
-        transform: translateX(0);
+        transform: translateX(-80%);
       }
       
 } 
