@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Match.Com</title>
-    <link rel="stylesheet" href="{{ asset('Css/All_Css_Container.css') }}"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
-<body>
+@extends('pagePrinc')
+@section("title") Match.Com @endsection
+@section('content')
 <div class="container">
   
     <div class="frame1">
@@ -17,17 +8,17 @@
         <h1 class="MatchCom">Match.Com</h1>
         <div class="linkgroupe">
             <ul>
-                <li><a href="#">Aboute</a></li>
-                <li><a href="#">Contact As</a></li>
-                <li><a href="#"><i class="fa-solid fa-user-plus"></i></a></li>
-                <li><a href="#"><span><i class="fa-solid fa-user"></i></span> Login</a></li>
+                <li><a href="#aboute">Aboute</a></li>
+                <li><a href="#aboute">Contact As</a></li>
+                <li><a href="{{ route('CreateAcountPage')}}"><i class="fa-solid fa-user-plus"></i></a></li>
+                <li><a href="{{ route('loginPage') }}"><span><i class="fa-solid fa-user"></i></span> Login</a></li>
         </ul>
         </div>
         <div class="paraghraf">
             <p>YOU CAN WATCH YOUR TV SHOW OR SPORT MATCH LIVE WITH THIS HIGH LEVEL QUALITY 4K SERVICE</p>
         </div>
         <div class="groupebtn">
-            <div class="btn1"><a href="#"> VIEW COLLECTION </a></div>
+            <div class="btn1"><a href="{{ route('loginPage') }}"> VIEW COLLECTION </a></div>
             <div class="btn2">
                 <ul>
                     <li><a href="#"><img src="{{url('Image/Instagram (1).svg')}}" alt="bg_image"></a></li>
@@ -93,7 +84,7 @@
             </div>
         </div>
     </div>
-    <div class="frame6">
+    <div class="frame6" id="aboute">
         <div class="party">
             <div class="contentcardimag"><img src="{{ url('Image/aboute.svg') }}" alt="footer image card"></div>
             <div class="contentcardimag"><img src="{{ url('Image/useful.svg') }}" alt="footer image card"></div>
@@ -106,5 +97,4 @@
         </div>
     </div>
 </div>  
-</body>
-</html>
+@endsection
