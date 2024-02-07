@@ -19,6 +19,9 @@
 body{
    
 }
+
+
+/*  THIS PARTY FOR LANDING PAGE */
 .container{
     width: 100%;
     height: 100%;
@@ -201,10 +204,10 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 70px;
     background-color: rgba(210, 105, 30, 0);
     transition: all 5s ease;
-    animation:10s linear infinite cardsrcol;
+    animation:10s linear  cardsrcol;
     overflow: hidden;
 }
  @keyframes cardsrcol {
@@ -214,7 +217,7 @@ justify-content: center;
     }
   
     100% {
-        transform: translateX(-80%);
+        transform: translateX(0);
       }
       
 } 
@@ -464,13 +467,13 @@ gap: 100px;
     padding: 10px;
  }
 
+/* FINNISH PARTY LADING PARGE*/
 
 
 
 
 
-
-
+/* THIS PARTY FOR SCROLL BAR  */
 
 
 ::-webkit-scrollbar{
@@ -483,3 +486,50 @@ width: .7em;
 ::-webkit-scrollbar-track{
     background-color:var(--bgColo);
 }
+
+/* FINNISH PARTY SCROLL BAR */
+
+
+
+/* THIS PARTY FOR CREATE ACOUNT PAGE*/
+.containerCreateAcount{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--verbel_3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.party2{
+    background-color: chartreuse;
+    width: 1093px;
+height: 568px;
+flex-shrink: 0;
+border-radius: 15px;
+position: relative;
+
+}
+.contantForme{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 648px;
+height: 568px;
+flex-shrink: 0;
+border-radius: 15px;
+background: #910A67;
+}
+.contantForme .titleCreatAcourt{
+    color: #FFF;
+    font-family: var(--font_k2d);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 5.28px;
+    text-align: center;
+}
+
+
+
+/* FINISH PARTY FOR CREATE ACOUNT PAGE*/
