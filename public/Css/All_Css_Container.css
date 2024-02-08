@@ -501,7 +501,7 @@ width: .7em;
     align-items: center;
 }
 .party2{
-    background-color: chartreuse;
+    background-color: rgba(128, 255, 0, 0);
     width: 1093px;
 height: 568px;
 flex-shrink: 0;
@@ -518,6 +518,11 @@ height: 568px;
 flex-shrink: 0;
 border-radius: 15px;
 background: #910A67;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 20px;
 }
 .contantForme .titleCreatAcourt{
     color: #FFF;
@@ -528,7 +533,160 @@ background: #910A67;
     line-height: normal;
     letter-spacing: 5.28px;
     text-align: center;
+    padding: 15px;
 }
+.contantForme form{
+    width: 100%;
+    height: auto;
+  background-color: rgba(137, 43, 226, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  
+}
+.contantForme form .inputelemnt{
+    width: 100%;
+    height: auto;
+  background-color: rgba(38, 21, 55, 0);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  
+}
+.contantForme form .pert1{
+    width: 50%;
+    height: auto;
+    background-color: rgba(43, 226, 128, 0);
+    display: flex;
+    justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  padding: 10px 0;position: relative;
+}
+.contantForme form .pert2{
+    width: 50%;
+    height: auto;
+  background-color: rgba(226, 43, 101, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  padding: 10px 0;
+  position: relative;
+}
+
+.contantForme form input{
+    width: 270px;
+    height: 59px;
+    flex-shrink: 0;
+    border-radius: 6px;
+background: rgba(30, 30, 30, 0.50);
+border: none;
+outline: none;
+padding:0 10px ;
+color: #ffffffad;
+font-family: var(--font_k2d);
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.76px;
+}
+.contantForme form input::placeholder{
+    color: #ffffffad;
+    font-family: var(--font_k2d);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.76px;
+}
+.contantForme form button{
+    width: 296px;
+    height: 59px;
+    flex-shrink: 0;
+    border-radius: 52px;
+background: #D9D9D9;
+color: #1a1a1a;
+font-family: var(--font_k2d);
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 2.2px;
+border: none;
+cursor: pointer;
+}
+.contantForme form label{
+   position: absolute;
+   bottom: 12%;
+   right: 10%;
+   width: 17px;
+height: 18px;
+flex-shrink: 0;
+color: rgba(255, 255, 255, 0.70);;
+}
+.contantForme form p{
+    color: rgba(255, 255, 255, 0.70);
+    font-family: var(--font_k2d);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.65px;
+}
+.contantForme form p a{
+    color: rgba(60, 7, 83, 0.80);
+    font-family: var(--font_k2d);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.65px;
+    text-decoration: none;
+}
+#FirstNam1,#LastNam1{
+   position: absolute;
+   top:12%;
+   right: 10%;
+
+}
+#email1,#email2{
+   position: absolute;
+   top:47%;
+   right: 10%;
+
+}
+#forpass1,#forpass2{
+    position: absolute;
+    bottom: 12%;
+    right: 10%;
+cursor: pointer;
+}
+.btnrollback{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    
+}
+.btnrollback a{
+font-size: 50px;
+color: #ffffff7f;
+transition: all .5s ease;
+
+}
+.btnrollback a:hover{
+font-size: 40px;
+color: #3c075393;
+
+}
+
 
 
 
