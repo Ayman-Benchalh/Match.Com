@@ -30,7 +30,7 @@
     </div>
     </div>
   
-    <button type="submit">SingUp now</button>
+    <button type="submit" >SingUp now</button>
 
     <p>I have an Account:  <a href="{{ route('loginPage') }}">Login !</a></p>
   </form>
@@ -62,11 +62,14 @@
    if(inputPassword2.type=="password"){
     inputPassword2.type="text";
     forpass2.innerHTML='<i class="fa-solid fa-lock-open"></i>';
-   }
- else{
+   }else{
     inputPassword2.type="password";
     forpass2.innerHTML='<i class="fa-solid fa-lock"></i>';
    }
     }
+
+
+
+
 </script>
 @endsection

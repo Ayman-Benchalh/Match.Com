@@ -691,3 +691,202 @@ color: #3c075393;
 
 
 /* FINISH PARTY FOR CREATE ACOUNT PAGE*/
+
+
+/* THIS PARTY FOR LOGIN PAGE */
+.containerForLoginPage{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--verbel_3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.partytforlogin{
+    width: 1093px;
+    height: 568px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+}
+.partyform{
+position: absolute;
+top: 0;
+right: 0;
+width: 428px;
+height: 568px;
+flex-shrink: 0;
+border-radius: 15px;
+background: #910A67;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 40px;
+}
+.titleform{
+    color: #FFF;
+    font-family: var(--font_k2d);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 5.28px;
+    text-align: center;
+    
+}
+.partyform form{
+background-color: rgba(210, 105, 30, 0);
+
+width: 100%;
+height: 350px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 40px;
+position: relative;
+}
+.partyform form .passparty{
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.partyform form input{
+
+    width: 339px;
+    height: 60px;
+    flex-shrink: 0;
+    color: #FFF;
+font-family: var(--font_k2d);
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.76px;
+border-radius: 6px;
+background: rgba(30, 30, 30, 0.50);
+border: none;
+outline: none;
+padding: 5px 15px;
+}
+.passparty{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.passparty a{
+    width: 90%;
+text-align: left;
+color: rgba(255, 255, 255, 0.70);
+font-family: var(--font_k2d);
+font-size: 11px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.21px;
+text-decoration: none;
+
+
+}
+.partyform form input::placeholder{
+
+
+    color: #ffffff84;
+font-family: var(--font_k2d);
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.76px;
+
+
+}
+.partyform form button{
+    width: 296px;
+height: 59px;
+flex-shrink: 0;
+    border-radius: 52px;
+    background: #D9D9D9;
+    color: #202020;
+font-family: var(--font_k2d);
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 2.2px;
+border: none;
+cursor: pointer;
+
+}
+.paraghraf{
+    width: 90%;
+    color: rgba(255, 255, 255, 0.70);
+font-family: var(--font_k2d);
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 1.65px;
+background-color: rgba(128, 255, 0, 0);
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+bottom: 5%;
+gap: 5px;
+}
+.paraghraf a{
+    color: rgba(60, 7, 83, 0.80);
+    font-family: var(--font_k2d);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.65px;
+    text-decoration: none;
+}
+#forpass3{
+    position: absolute;
+    right: 5%;
+    bottom: 45%;
+    width: 20px;
+height: 24px;
+flex-shrink: 0;
+color: #ffffff96;
+}
+#email3{
+    position: absolute;
+    right: 11%;
+    top: 15%;
+    width: 20px;
+height: 24px;
+flex-shrink: 0;
+color: #ffffff96;
+}
+.btnrollcak2{
+    position: absolute;
+    top: 3%;
+    right: 6%;
+    font-size: 40px;
+}
+.btnrollcak2 a{
+    font-size: 50px;
+    color: #ffffff7f;
+    transition: all .5s ease;
+    
+}
+
+.btnrollcak2 a:hover{
+    font-size: 40px;
+    color: #3c075393;
+    
+}
+    
+
+/*FINNIS PARTY FOR LAGIN PAGE*/
