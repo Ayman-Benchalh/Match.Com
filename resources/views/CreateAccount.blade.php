@@ -10,6 +10,7 @@
   <div class="titleCreatAcourt">Sing Up</div>
   <div class="btnrollback"><a href="{{ route('ladingPage')}}"><i class="fa-solid fa-xmark"></i></a></div>
   <form action="" method="POST">
+    @csrf
     <div class="inputelemnt">
         <div class="pert1">
       <input type="text" placeholder="First name" required id="FirstNam" name="FirstNam">

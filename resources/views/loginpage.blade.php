@@ -10,6 +10,7 @@
                   <div class="titleform">LOG IN</div>
                   <div class="btnrollcak2"><a href="{{ route('ladingPage') }}"><i class="fa-solid fa-xmark"></i></a></div>
                   <form action="" method="POST">
+                        @csrf
                         <input type="email" required name="email" id="email" placeholder="email">
                         <label for="email3" id="email3"><i class="fa-solid fa-user"></i></label>
                         <div class="passparty">
