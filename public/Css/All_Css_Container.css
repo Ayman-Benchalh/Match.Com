@@ -16,10 +16,6 @@
     padding: 0; 
     scroll-behavior: smooth;
 }
-body{
-   
-}
-
 
 /*  THIS PARTY FOR LANDING PAGE */
 .container{
@@ -213,7 +209,7 @@ justify-content: center;
  @keyframes cardsrcol {
     0% {
 
-        transform: translateX(100%); 
+        transform: translateX(90%); 
     }
   
     100% {
@@ -221,6 +217,9 @@ justify-content: center;
       }
       
 } 
+.cardimg:hover{
+    transform: scale(1.1);
+}
 
 .frame2 .gourpecardimg .cardimg{
 width: 230px;
@@ -270,9 +269,47 @@ padding: 20px 0;
 }
 .frame3 .prtyForCardImg .CardImgMovie img{
     width: 100%;
-    height: 100%;
+    height: 100%;}
 
+
+
+
+/* partiya dyal movies*/
+a:hover{
+    transform: scale(1.1);
 }
+
+
+.prtyForCardImg  {
+    opacity: 0;
+    transform: translateY(80px);
+    animation: slideUpFromPocket 2s ease-out forwards;
+}
+
+@keyframes slideUpFromPocket {
+    from {
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+       transform: translateY(0);
+    }
+}
+.CardImgMovie:hover {
+    transform: scale(1.2);
+}
+
+.Cardplan21:hover{
+    transform: scale(1.1);
+}
+.Cardplan0:hover{
+    transform: scale(1.1);
+}
+
+
+
+    
+
 .frame4{
     width: 100%;
     height: auto;

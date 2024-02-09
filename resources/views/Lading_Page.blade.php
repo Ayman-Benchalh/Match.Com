@@ -56,7 +56,7 @@
     <div class="frame4">
         <div class="title">CHOOSE YOUR PLAN</div>
         <div class="partyForCradCOLL">
-            <div class="Cardplan"><img src="{{ url('Image/card1.svg') }}" alt="Image for plan card"></div>
+            <div class="Cardplan0"><img src="{{ url('Image/card1.svg') }}" alt="Image for plan card"></div>
            
            <div class="Cardplan" >   
             <div class="Cardplan1">
