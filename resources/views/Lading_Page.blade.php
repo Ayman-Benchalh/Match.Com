@@ -8,8 +8,8 @@
         <h1 class="MatchCom">Match.Com</h1>
         <div class="linkgroupe">
             <ul>
-                <li><a href="#aboute">Aboute</a></li>
-                <li><a href="#aboute">Contact As</a></li>
+                <li><a href="#aboute">About</a></li>
+                <li><a href="#aboute">Contact Us</a></li>
                 <li><a href="{{ route('CreateAcountPage')}}"><i class="fa-solid fa-user-plus"></i></a></li>
                 <li><a href="{{ route('loginPage') }}"><span><i class="fa-solid fa-user"></i></span> Login</a></li>
         </ul>
