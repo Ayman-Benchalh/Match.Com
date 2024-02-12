@@ -36,11 +36,26 @@
     </div>
     <div class="frame2">
         <div class="gourpecardimg">
-             <div class="cardimg"><img src="{{ url("Image/mincardNet.svg") }}" alt="image"></div>
-             <div class="cardimg"><img src="{{ url("Image/mincardHul.svg") }}" alt="image"></div>
-             <div class="cardimg"><img src="{{ url("Image/mincardHbo.svg") }}" alt="image"></div>
-             <div class="cardimg"><img src="{{ url("Image/mincardDes.svg") }}" alt="image"></div>
-             <div class="cardimg"><img src="{{ url("Image/mincardPirmeV.svg") }}" alt="image"></div>
+             <img class="imgs" src="{{ url("Image/mincardNet.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHul.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHbo.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardDes.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardPirmeV.svg") }}" alt="image">
+        </div>     
+             <!--the second part of the sliding logos-->
+        <div class="gourpecardimg">
+             <img class="imgs" src="{{ url("Image/mincardNet.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHul.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHbo.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardDes.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardPirmeV.svg") }}" alt="image">
+        </div>
+        <div class="gourpecardimg">
+             <img class="imgs" src="{{ url("Image/mincardNet.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHul.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHbo.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardDes.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardPirmeV.svg") }}" alt="image">
         </div>
       
     </div>
