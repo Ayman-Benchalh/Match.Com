@@ -7,7 +7,7 @@
   <div class="party2">
 <div class="contentImagCreateAcount"><img src="{{ url('Image/foottleimg.svg') }}" alt="image"></div>
 <div class="contantForme">
-  <div class="titleCreatAcourt">Sing Up</div>
+  <div class="titleCreatAcourt">Sign Up</div>
   <div class="btnrollback"><a href="{{ route('ladingPage')}}"><i class="fa-solid fa-xmark"></i></a></div>
   <form action="" method="POST">
     @csrf
@@ -31,7 +31,7 @@
     </div>
     </div>
   
-    <button type="submit" >SingUp now</button>
+    <button type="submit" >SignUp now</button>
 
     <p>I have an Account:  <a href="{{ route('loginPage') }}">Login !</a></p>
   </form>

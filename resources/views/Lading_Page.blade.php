@@ -71,11 +71,11 @@
     <div class="frame4">
         <div class="title">CHOOSE YOUR PLAN</div>
         <div class="partyForCradCOLL">
-            <div class="Cardplan0"><img src="{{ url('Image/card1.svg') }}" alt="Image for plan card"></div>
+            <img class="cardplan6" src="{{ url('Image/card1.svg') }}" alt="Image for plan card">
            
            <div class="Cardplan" >   
             <div class="Cardplan1">
-                <img src="{{ url('Image/card2.svg') }}" alt="Image for plan card"></div>
+                <img  class="Cardplan1" src="{{ url('Image/card2.svg') }}" alt="Image for plan card"></div>
             <div class="Cardplan2">
                 <div class="Cardplan21"><img src="{{ url('Image/card3.svg') }}" alt="Image for plan card"></div>
                 <div class="Cardplan21"><img src="{{ url('Image/card4.svg') }}" alt="Image for plan card"></div>
