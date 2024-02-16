@@ -22,3 +22,4 @@ Route::get('/login',[GlobalController::class,'login'])->name("loginPage");
 
 Route::get('/Create_Acount',[GlobalController::class,'Create_Acount'])->name("CreateAcountPage");
 Route::post('/Create_Acount',[GlobalController::class,'insertAccount'])->name("insertAccount");
+Route::post('/login_Acount',[GlobalController::class,'login_Acount'])->name("login_Acount");

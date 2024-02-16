@@ -9,13 +9,16 @@
             <div class="partyform">
                   <div class="titleform">LOG IN</div>
                   <div class="btnrollcak2"><a href="{{ route('ladingPage') }}"><i class="fa-solid fa-xmark"></i></a></div>
-                  <form action="" method="POST">
+                  <form action="{{ route('login_Acount') }}" method="POST">
                         @csrf
-                        <input type="email" required name="email" id="email" placeholder="email">
+
+                        @error('email')<span class="errorMessage1">{{ $message }}</span>@enderror
+                        @error('password')<span class="errorMessage2">{{ $message }}</span>@enderror
+                        <input type="email" required name="email" id="email" placeholder="email" value="{{ old('email') }}">
                         <label for="email3" id="email3"><i class="fa-solid fa-user"></i></label>
                         <div class="passparty">
                               <input type="password" required placeholder="password" name="password" id="password3">
-                              <label for="password" id="forpass3" onclick="myfunc()" ><i class="fa-solid fa-lock"></i></label>
+                              <label for="password" id="forpass3" onclick="myfunc()"><i class="fa-solid fa-lock"></i></label>
                               <a href="#" class="liinds">reset your password here</a>
                         </div>
                         <button type="submit">Login now</button>

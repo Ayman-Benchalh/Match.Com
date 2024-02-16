@@ -20,7 +20,7 @@ class GlobalController extends Controller
         return  view('CreateAccount');
     }
     public function insertAccount(){         
-       
+        
         $firstname=request()->firstName;
         $lastname=request()->lastName;
         $email=request()->email;
@@ -28,41 +28,64 @@ class GlobalController extends Controller
         $password=request()->password;
         $password2=request()->password2; 
         // dd($firstname , $lastname ,$email,$email2 , $password,$password2);
-      
-
+        
+        
         
         $values = ['email'=>$email,'password'=>$password];
         if($email==$email2 && $password==$password2){
             request()->validate([
-                    'email'=>['required','email', 'min:8'],
-                    'password'=>['required','min:5'],
-             
+                'email'=>['required','email', 'min:8'],
+                'password'=>['required','min:5'],
+                
             ]);
-           
+            
             if(Auth::attempt($values)){ 
                 
                 return back()->withErrors([
-                    'email'=>" ! this email it have an Account "
-                ])->onlyinput('email');
+                    'email'=>" ! This email it have an Account "
+                    ])->onlyinput('email');
+                }else{
+                    User::create([
+                        'firstName'=>$firstname,
+                        'lastName'=>$lastname,
+                        'email'=>$email,
+                        'password'=>hash::make($password),
+                    ]);
+                    return  view("loginpage");
+                }
+                
+                
+                
             }else{
-               User::create([
-                    'firstName'=>$firstname,
-                    'lastName'=>$lastname,
-                    'email'=>$email,
-                    'password'=>hash::make($password),
-                ]);
-                  return  view("loginpage");
+                return back()->withErrors([
+                    'email'=>" ! You have some erreur in email or password"
+                    ])->onlyinput('email',"email2","password",'password2','firstName','lastName');
+                };
+                return view("loginpage");
+                
+                
             }
-     
-            
+        public function login_Acount(){
 
-        }else{
-            return back()->withErrors([
-                'email'=>" ! you have some erreur in email or password"
-            ])->onlyinput('email',"email2","password",'password2','firstName','lastName');
-        };
-        return view("loginpage");
-       
-      
-    }
+            $email = request()->email;
+            $password = request()->password;
+            // dd($email ,  $password );
+            request()->validate([
+                'email'=>['email','min:8'],
+                'password'=>['required','min:8'],
+            ]);
+            $values =['email'=> $email ,'password'=>$password ];
+            if(Auth::attempt($values)){
+                request()->session()->regenerate();
+               User::where('email',$email);
+               return "good login";
+            }else{
+                // dd(Auth::attempt($values)) ;
+                return back()->withErrors([
+                    'email'=>"You have A probleme in your login "
+                ])->onlyInput('email');
+            }
+               return "good login";
+        }
 }
+        
