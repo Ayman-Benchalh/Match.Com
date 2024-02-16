@@ -20,7 +20,7 @@
                         </div>
                         <button type="submit">Login now</button>
                          </form>
-                  <div class="paraghraf">I don’t have an Account:  <a href="{{ route('CreateAcountPage') }}"> Register ! </a></div>
+                  <div class="paraghraf1">You don’t have an Account:  <a href="{{ route('CreateAcountPage') }}"> Register ! </a></div>
                  
             </div>
       </div>

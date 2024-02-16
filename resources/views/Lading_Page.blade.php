@@ -8,8 +8,8 @@
         <h1 class="MatchCom">Match.Com</h1>
         <div class="linkgroupe">
             <ul>
-                <li><a href="#aboute">Aboute</a></li>
-                <li><a href="#aboute">Contact As</a></li>
+                <li><a href="#aboute">About</a></li>
+                <li><a href="#aboute">Contact Us</a></li>
                 <li><a href="{{ route('CreateAcountPage')}}"><i class="fa-solid fa-user-plus"></i></a></li>
                 <li><a href="{{ route('loginPage') }}"><span><i class="fa-solid fa-user"></i></span> Login</a></li>
         </ul>
@@ -36,11 +36,26 @@
     </div>
     <div class="frame2">
         <div class="gourpecardimg">
-             <div class="cardimg"><img src="{{ url("Image/mincardNet.svg") }}" alt="image"></div>
-             <div class="cardimg"><img src="{{ url("Image/mincardHul.svg") }}" alt="image"></div>
-             <div class="cardimg"><img src="{{ url("Image/mincardHbo.svg") }}" alt="image"></div>
-             <div class="cardimg"><img src="{{ url("Image/mincardDes.svg") }}" alt="image"></div>
-             <div class="cardimg"><img src="{{ url("Image/mincardPirmeV.svg") }}" alt="image"></div>
+             <img class="imgs" src="{{ url("Image/mincardNet.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHul.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHbo.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardDes.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardPirmeV.svg") }}" alt="image">
+        </div>     
+             <!--the second part of the sliding logos-->
+        <div class="gourpecardimg">
+             <img class="imgs" src="{{ url("Image/mincardNet.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHul.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHbo.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardDes.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardPirmeV.svg") }}" alt="image">
+        </div>
+        <div class="gourpecardimg">
+             <img class="imgs" src="{{ url("Image/mincardNet.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHul.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardHbo.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardDes.svg") }}" alt="image">
+             <img class="imgs" src="{{ url("Image/mincardPirmeV.svg") }}" alt="image">
         </div>
       
     </div>
@@ -56,11 +71,11 @@
     <div class="frame4">
         <div class="title">CHOOSE YOUR PLAN</div>
         <div class="partyForCradCOLL">
-            <div class="Cardplan"><img src="{{ url('Image/card1.svg') }}" alt="Image for plan card"></div>
+            <img class="cardplan6" src="{{ url('Image/card1.svg') }}" alt="Image for plan card">
            
            <div class="Cardplan" >   
             <div class="Cardplan1">
-                <img src="{{ url('Image/card2.svg') }}" alt="Image for plan card"></div>
+                <img  class="Cardplan1" src="{{ url('Image/card2.svg') }}" alt="Image for plan card"></div>
             <div class="Cardplan2">
                 <div class="Cardplan21"><img src="{{ url('Image/card3.svg') }}" alt="Image for plan card"></div>
                 <div class="Cardplan21"><img src="{{ url('Image/card4.svg') }}" alt="Image for plan card"></div>
