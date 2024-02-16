@@ -16,7 +16,7 @@
                         <div class="passparty">
                               <input type="password" required placeholder="password" name="password" id="password3">
                               <label for="password" id="forpass3" onclick="myfunc()" ><i class="fa-solid fa-lock"></i></label>
-                              <a href="#">reset your password here</a>
+                              <a href="#" class="liinds">reset your password here</a>
                         </div>
                         <button type="submit">Login now</button>
                          </form>

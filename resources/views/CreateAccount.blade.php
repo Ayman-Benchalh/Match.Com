@@ -10,23 +10,25 @@
   <div class="titleCreatAcourt">Sign Up</div>
   <div class="btnrollback"><a href="{{ route('ladingPage')}}"><i class="fa-solid fa-xmark"></i></a></div>
   <form action="" method="POST">
-    @csrf
+    @csrf   
+    <span>@error('email'){{ $message }}@enderror</span>
     <div class="inputelemnt">
         <div class="pert1">
-      <input type="text" placeholder="First name" required id="FirstNam" name="FirstNam">
+      <input type="text" placeholder="First name" required id="FirstNam" name="firstName" value="{{ old('firstName') }}">
       <label for="FirstNam" id="FirstNam1"><i class="fa-solid fa-user"></i></label>
-      <input type="email" name="email" required id="Email" placeholder="Email">
+      <input type="email" name="email" required id="email" placeholder="Email" value="{{ old('email') }}">
+   
       <label for="Email" id="email1"><i class="fa-solid fa-at"></i></label>
-      <input type="password" required name="password" id="password1" placeholder="password">
+      <input type="password" required name="password" id="password1" placeholder="password"  >
       <label for="password" id="forpass1" onclick="myfunc()" ><i class="fa-solid fa-lock"></i></label>
       
     </div>
     <div class="pert2">
-      <input type="text" required placeholder="Last name" id="LastNam" name="LastNam">
+      <input type="text" required placeholder="Last name" id="LastNam" name="lastName" value="{{ old('lastName') }}">
       <label for="LastNam" id="LastNam1"><i class="fa-solid fa-user"></i></label>
-      <input type="email" required  name="email" id="email" placeholder="Confirme Email">
+      <input type="email" required  name="email2" id="email" placeholder="Confirme Email" value="{{ old('email2') }}">
       <label for="email2" id="email2"><i class="fa-solid fa-at"></i></label>
-      <input type="password" required name="password" id="password2"  placeholder="Confirme password">
+      <input type="password" required name="password2" id="password2"  placeholder="Confirme password">
       <label for="password" id="forpass2"  onclick="myfunc2()"><i class="fa-solid fa-lock"></i></label>
     </div>
     </div>

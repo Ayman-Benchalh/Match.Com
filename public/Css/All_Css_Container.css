@@ -10,6 +10,9 @@
     background-color: var(--verbel_3);
     color: #eee;
 }
+/* partiya dyal movies*/
+
+
 *{
     margin: 0;
     padding: 0; 
@@ -127,23 +130,7 @@ object-fit: cover;
     
 }
 
-.paraghraf1 a{
-    color: #eeee;
-    font-size: 25px;
-    font-family: var(--font_k2d);
-    font-weight: 600;
-    text-decoration: none;
-    
-}
 
-
-.paraghraf1 {
-    color: black;
-    font-size: 25px;
-    font-family: var(--font_k2d);
-    font-weight: 600;
-    
-}
 
 
 
@@ -272,6 +259,7 @@ gap: 20px;
 }
 .frame3 .prtyForCardImg .CardImgMovie{
     width: 350px;
+    transition: all .5s ease;
 
 }
 .frame3 .prtyForCardImg .CardImgMovie img{
@@ -281,10 +269,6 @@ gap: 20px;
 
 
 
-/* partiya dyal movies*/
-a:hover{
-    transform: scale(1.1);
-}
 
 
 .prtyForCardImg  {
@@ -829,7 +813,7 @@ padding: 5px 15px;
     gap: 10px;
     position: relative;
 }
-.passparty a{
+.passparty .liinds{
     width: 90%;
 text-align: left;
 color: rgba(255, 255, 255, 0.70);
@@ -908,6 +892,27 @@ color: #ffffff96;
     font-size: 40px;
     color: #3c075393;
     
+}
+
+.paraghraf1{
+    
+    color: rgba(255, 255, 255, 0.70);
+    font-family: var(--font_k2d);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.65px;
+}
+.paraghraf1 a{
+    color: rgba(60, 7, 83, 0.80);
+    font-family: var(--font_k2d);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.65px;
+    text-decoration: none;
 }
     
 
