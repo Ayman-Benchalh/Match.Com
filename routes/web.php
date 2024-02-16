@@ -19,4 +19,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[GlobalController ::class,"index" ])->name("ladingPage");
 
 Route::get('/login',[GlobalController::class,'login'])->name("loginPage");
+
 Route::get('/Create_Acount',[GlobalController::class,'Create_Acount'])->name("CreateAcountPage");

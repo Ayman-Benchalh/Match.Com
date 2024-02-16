@@ -34,7 +34,7 @@
 
        if(inputPassword1.type=="password"){
         inputPassword1.type="text";
-       forpass1.innerHTML='<i class="fa-solid fa-lock-open"></i>';
+      forpass1.innerHTML='<i class="fa-solid fa-lock-open"></i>';
        }else{
         inputPassword1.type="password";
         forpass1.innerHTML='<i class="fa-solid fa-lock"></i>';
