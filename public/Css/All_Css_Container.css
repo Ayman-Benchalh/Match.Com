@@ -265,13 +265,17 @@ gap: 20px;
 .frame3 .prtyForCardImg .CardImgMovie img{
     width: 100%;
     height: 100%;}
-
-
-
-
-
-
-.prtyForCardImg  {
+    
+    
+    
+.frame3 .prtyForCardImg .CardImgMovie:hover{
+     transform: scale(1.1);
+    
+    }
+    
+    
+    
+    .prtyForCardImg  {
     opacity: 0;
     transform: translateY(80px);
     animation: slideUpFromPocket 2s ease-out forwards;
