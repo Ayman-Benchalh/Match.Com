@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,23 +69,31 @@ class GlobalController extends Controller
 
             $email = request()->email;
             $password = request()->password;
-            // dd($email ,  $password );
+ 
             request()->validate([
                 'email'=>['email','min:8'],
                 'password'=>['required','min:8'],
             ]);
+
             $values =['email'=> $email ,'password'=>$password ];
             if(Auth::attempt($values)){
                 request()->session()->regenerate();
-               User::where('email',$email);
-               return "good login";
+             $data =  User::where('email',$email)->first();
+             
+               return to_route('AllCollection',['idUser'=>$data->idUser]);
             }else{
-                // dd(Auth::attempt($values)) ;
+                
                 return back()->withErrors([
                     'email'=>"You have A probleme in your login "
                 ])->onlyInput('email');
             }
-               return "good login";
+               
         }
+
+    public function AllCollection($idUser){
+        $dataprodt= Product::all();
+  
+        return view('viewAllProduct',['idUser'=>$idUser , 'dataprodt'=> $dataprodt]);
+    }
 }
         

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -45,8 +46,12 @@ class Admin extends Model
         'password' => 'hashed',
     ];
 
-    public function command(): HasMany
+    public function command(): BelongsTo
     {
-        return $this->hasMany(Command::class);
+        return $this->BelongsTo(Command::class);
+    }
+    public function boitdeMessage(): BelongsTo
+    {
+        return $this->BelongsTo(BoitDeMessage::class);
     }
 }
