@@ -3,6 +3,7 @@
     --bgColo: #030637;
     --verbel_2 : #910A67;
     --verbel_3 : #3C0753;
+    --colorWhi : #eee;
     --font_k2d :'K2D', sans-serif;
 
 }
@@ -479,12 +480,18 @@ gap: 100px;
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: start;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 30px 0 ;
+    padding: 30px 25px ;
     background-color: rgba(137, 43, 226, 0);
+    
+ }
+ .frame6 .party .contentcardimag{
+     padding: 20px;
+
+
     
  }
  .frame7{
@@ -962,3 +969,264 @@ color: #ffffff96;
     padding: 10px;
     text-align: center;
 }
+
+/* this party for page all product */
+
+.containerProdct{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bgColo);
+}
+.containerProdct .navbar{
+    width: 100%;
+
+background-color:var(--verbel_3);
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.containerProdct .navbar .part1{
+width: auto;
+padding: 15px;
+}
+.containerProdct .navbar .part1 h1{
+    color: #FFF;
+    font-family: var(--font_k2d);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.containerProdct  .navbar .part2 {
+
+width: auto;
+padding: 15px 20px;
+
+}
+.containerProdct  .navbar .part2 ul{
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 30px;
+
+}
+.containerProdct  .navbar .part2 ul li{
+list-style-type: none;
+
+}
+
+.containerProdct  .navbar .part2 ul li a{
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    text-decoration: none;
+    color: var(--colorWhi);
+    
+    text-align: center;
+    font-family: var(--font_k2d);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--verbel_2);
+}
+.containerProdct  .navbar .part2 ul li:first-child a{
+width: 148px;
+height: 50px;
+flex-shrink: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+background-color: var(--verbel_2);
+border-radius: 10px;
+text-align: center;
+font-family: var(--font_k2d);
+font-size: 23px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding: 3px;
+
+}
+
+.containerProdct  .contentimg{
+    width: 100%;
+    height: 87vh;
+    background-color: #db85ff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerProdct  .contentimg img{ 
+    width: 100%;
+    height: 100%;
+
+}
+.containerProdct  .contentimg .paraghaphe{ 
+
+position: absolute;
+top: 35%;
+bottom: 50%;
+
+margin: auto;
+z-index: 9999;
+color: rgba(255, 255, 255, 0.80);
+text-align: center;
+font-family: var(--font_k2d);
+font-size: 96px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+object-fit: cover;
+}
+.containerProdct  .contantpage{ 
+width: 100%;
+height: 100%;
+padding: 25px 0;
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.containerProdct  .contantpage .title{ 
+    color: var(--colorWhi);
+    text-align: center;
+    font-family: var(--font_k2d);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-color: #72045500;
+    padding: 20px;
+
+}
+.containerProdct  .contantpage .partycollection{ 
+   width: 100%;
+   height: 100%;
+   display: block;
+   background-color: rgba(210, 105, 30, 0);
+
+}
+.containerProdct  .contantpage .partycollection .groupecart{
+    width: 85%;
+    height: auto;
+    margin: auto;
+    padding: 15px;
+    background-color: #3c075300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    
+}
+.containerProdct  .contantpage .partycollection .cart{ 
+
+   width: 340px;
+height: 540px;
+flex-shrink: 0;
+  border-radius: 16px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+margin: 15px;
+box-shadow: 0px 0px 10px 0px rgba(255, 246, 246, 0.50);
+}
+.containerProdct  .contantpage .partycollection .cart img{ 
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.containerProdct  .contantpage .partycollection .cart a{ 
+    width: 100%;
+    height: 100%;
+  color: var(--colorWhi);
+  text-decoration: none;
+  border-radius: 16px;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.24);
+backdrop-filter: blur(25px);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 25px;
+
+}
+.containerProdct  .contantpage .partycollection .cart a .titlecart{ 
+  
+    color: var(--colorWhi);
+    text-align: center;
+    font-family: var(--font_k2d);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.containerProdct  .contantpage .partycollection .cart a .savecart{ 
+  
+    color: #EEC800;
+    text-align: center;
+    font-family: var(--font_k2d);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.containerProdct  .contantpage .partycollection .cart a .prixcart{ 
+    width: 90%;
+    height: 81px;
+    flex-shrink: 0;
+    color: var(--colorWhi);
+text-align: center;
+font-family: var(--font_k2d);
+font-size: 64px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.containerProdct  .contantpage .partycollection .cart a .desination ul { 
+    width: 100%;
+    height: 100%;
+display: flex;
+
+justify-content: flex-start;
+align-items: flex-start;
+gap: 20px;
+
+flex-direction: column;
+
+}
+.containerProdct  .contantpage .partycollection .cart a .desination ul li { 
+    width: 100%;
+
+list-style-type: none;
+color: var(--colorWhi);
+text-align: left;
+font-family: var(--font_k2d);
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+display: flex;
+gap: 10px;
+align-items: center;
+}
+.containerProdct  .contantpage .partycollection .cart a .desination ul li i{ 
+ color:#84FF65;
+ font-weight: bold;
+}
+/* finish party page all product */

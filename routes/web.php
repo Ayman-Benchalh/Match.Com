@@ -25,4 +25,4 @@ Route::post('/Create_Acount',[GlobalController::class,'insertAccount'])->name("i
 Route::post('/login_Acount',[GlobalController::class,'login_Acount'])->name("login_Acount");
 
 
-Route::get('/AllCollection/{iduser}',[GlobalController::class,'AllCollection'])->name("AllCollection");
+Route::get('/AllCollection/{idUser}',[GlobalController::class,'AllCollection'])->name("AllCollection");

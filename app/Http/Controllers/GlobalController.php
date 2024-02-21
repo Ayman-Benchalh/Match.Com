@@ -77,10 +77,9 @@ class GlobalController extends Controller
 
             $values =['email'=> $email ,'password'=>$password ];
             if(Auth::attempt($values)){
-                request()->session()->regenerate();
-             $data =  User::where('email',$email)->first();
              
-               return to_route('AllCollection',['idUser'=>$data->idUser]);
+             $data =  User::where('email',$email)->first();
+             return to_route('AllCollection',['idUser'=>$data->idUser]);
             }else{
                 
                 return back()->withErrors([
