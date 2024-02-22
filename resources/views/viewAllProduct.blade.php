@@ -22,9 +22,10 @@
     <div class="groupecart">
     
       @foreach ($dataprodt as $collection)
+
           <div class="cart">
             <img src="{{ url('Image/cartimag.svg') }}" alt="">
-            <a href="#">
+            <a href="{{ route('viewOne_Product',['idUser'=>$idUser,'idProduct'=>$collection->idProduct]) }}">
                   <h1 class="titlecart"> {{  $collection->nom }}</h1>
                   <div class="savecart"> {{  $collection->sauvegarder }}</div>
                   <div class="prixcart"> {{  $collection->prix }} $</div>

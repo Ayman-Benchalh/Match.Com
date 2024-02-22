@@ -92,7 +92,18 @@ class GlobalController extends Controller
     public function AllCollection($idUser){
         $dataprodt= Product::all();
   
-        return view('viewAllProduct',['idUser'=>$idUser , 'dataprodt'=> $dataprodt]);
+  
+        return view('viewAllProduct',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt]);
+    }
+    public function viewOneProduct($idUser , $idProduct){
+        $dataOneprodt= Product::where('idProduct',$idProduct)->first();
+        
+        $dataOneUser= User::where('idUser',$idUser)->first();
+
+    
+
+
+        return view('ViewOneProduct',['idUser'=>$idUser ,'dataOneprodt'=> $dataOneprodt,'dataOneUser'=> $dataOneUser]);
     }
 }
         

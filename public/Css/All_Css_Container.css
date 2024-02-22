@@ -1059,7 +1059,7 @@ padding: 3px;
 .containerProdct  .contentimg{
     width: 100%;
     height: 87vh;
-    background-color: #db85ff;
+    background-color: #da85ff00;
     position: relative;
     display: flex;
     justify-content: center;
@@ -1230,3 +1230,319 @@ align-items: center;
  font-weight: bold;
 }
 /* finish party page all product */
+
+/* this style for page view one product*/
+.containerOnprodcut{
+    width: 100%;
+    min-height:100vh ;
+    background-color: var(--bgColo);
+}
+.containerOnprodcut .navbar{
+    width: 100%;
+
+background-color:var(--verbel_3);
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.containerOnprodcut .navbar .part1{
+width: auto;
+padding: 15px;
+}
+.containerOnprodcut .navbar .part1 h1{
+    color: #FFF;
+    font-family: var(--font_k2d);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.containerOnprodcut  .navbar .part2 {
+
+width: auto;
+padding: 15px 20px;
+
+}
+.containerOnprodcut  .navbar .part2 ul{
+
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 30px;
+
+}
+.containerOnprodcut  .navbar .part2 ul li{
+list-style-type: none;
+
+}
+
+.containerOnprodcut  .navbar .part2 ul li a{
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    text-decoration: none;
+    color: var(--colorWhi);
+    
+    text-align: center;
+    font-family: var(--font_k2d);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--verbel_2);
+}
+.containerOnprodcut  .navbar .part2 ul li:first-child a{
+width: 148px;
+height: 50px;
+flex-shrink: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+background-color: var(--verbel_2);
+border-radius: 10px;
+text-align: center;
+font-family: var(--font_k2d);
+font-size: 23px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding: 3px;
+
+}
+
+.contentOnprodcut{
+    width: 100%;
+    min-height: 90vh;
+    background-color: rgba(127, 255, 212, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+padding-top: 15px;
+}
+.contentOnprodcut .partone{
+    width: 30%;
+    height: 100%;
+display: block;
+background-color: rgba(210, 105, 30, 0);
+display: flex;
+justify-content: center;
+align-items: start;
+padding: 15px 0;
+}
+.contentOnprodcut .partone .cart{ 
+
+    width: 340px;
+ height: 540px;
+ flex-shrink: 0;
+   border-radius: 16px;
+ 
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+ margin: 15px;
+ box-shadow: 0px 0px 10px 0px rgba(255, 246, 246, 0.50);
+ }
+ .contentOnprodcut .partone .cart img{ 
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ }
+ .contentOnprodcut .partone .cart a{ 
+     width: 100%;
+     height: 100%;
+   color: var(--colorWhi);
+   text-decoration: none;
+   border-radius: 16px;
+   position: absolute;
+   top: 0;
+   background: rgba(0, 0, 0, 0.24);
+ backdrop-filter: blur(25px);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ gap: 25px;
+ 
+ }
+ .contentOnprodcut .partone .cart a .titlecart{ 
+   
+     color: var(--colorWhi);
+     text-align: center;
+     font-family: var(--font_k2d);
+     font-size: 36px;
+     font-style: normal;
+     font-weight: 700;
+     line-height: normal;
+ }
+ .contentOnprodcut .partone .cart a .savecart{ 
+   
+     color: #EEC800;
+     text-align: center;
+     font-family: var(--font_k2d);
+     font-size: 24px;
+     font-style: normal;
+     font-weight: 700;
+     line-height: normal;
+ }
+ .contentOnprodcut .partone .cart a .prixcart{ 
+     width: 90%;
+     height: 81px;
+     flex-shrink: 0;
+     color: var(--colorWhi);
+ text-align: center;
+ font-family: var(--font_k2d);
+ font-size: 64px;
+ font-style: normal;
+ font-weight: 600;
+ line-height: normal;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ }
+ .contentOnprodcut .partone .cart a .desination ul { 
+     width: 100%;
+     height: 100%;
+ display: flex;
+ 
+ justify-content: flex-start;
+ align-items: flex-start;
+ gap: 20px;
+ 
+ flex-direction: column;
+ 
+ }
+ .contentOnprodcut .partone .cart a .desination ul li { 
+     width: 100%;
+ 
+ list-style-type: none;
+ color: var(--colorWhi);
+ text-align: left;
+ font-family: var(--font_k2d);
+ font-size: 18px;
+ font-style: normal;
+ font-weight: 600;
+ line-height: normal;
+ display: flex;
+ gap: 10px;
+ align-items: center;
+ }
+ .contentOnprodcut .partone .cart a .desination ul li i{ 
+  color:#84FF65;
+  font-weight: bold;
+ }
+.contentOnprodcut .parttwo{
+    min-width: 50%;
+    min-height: 100%;
+    display: block;
+    background-color: rgba(24, 28, 21, 0);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+}
+.contentOnprodcut .parttwo .contentInform{
+
+    background-color: rgba(87, 158, 32, 0);
+    display: flex;
+    justify-content: flex-start;
+   padding:0 20px ;
+    gap: 40px;
+    flex-direction: column;
+
+}
+.contentOnprodcut .parttwo .titleproduct{
+    color: var(--colorWhi);
+    font-family: var(--font_k2d);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 3.96px;
+}
+
+.contentOnprodcut .parttwo .line{
+width: 100%;
+height: 10px;
+border-radius: 15px;
+margin: auto;
+background-color: var(--verbel_2);
+}
+.contentOnprodcut .parttwo .namUser , .emailUser ,.feedback ,.Datefinish ,.TotalPrix{
+    color: var(--colorWhi);
+    font-family: var(--font_k2d);
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 3.96px;
+
+}
+.contentOnprodcut .parttwo .twobtn {
+    width: 90%;
+    height: 100px;
+    margin: auto;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+gap: 35px;
+background-color: #eec60000;
+
+flex-direction: row;
+}
+.contentOnprodcut .parttwo .twobtn a{
+text-decoration: none;
+color: var(--colorWhi);
+}
+.contentOnprodcut .parttwo .twobtn .goback{
+    width: 227px;
+    height: 67px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+background: #C00404;
+color: var(--colorWhi);
+font-family: var(--font_k2d);
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 3.3px;
+}
+.contentOnprodcut .parttwo .twobtn .paynow{
+    width: 227px;
+    height: 67px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 14px;
+background: #2AC004;
+color: var(--colorWhi);
+font-family: var(--font_k2d);
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 3.52px;
+}
+
+.lastprix{
+    color: crimson;
+    font-size: 20px;
+
+    text-decoration: line-through;
+
+}
+
+/* finish page view one product*/

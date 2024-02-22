@@ -26,3 +26,4 @@ Route::post('/login_Acount',[GlobalController::class,'login_Acount'])->name("log
 
 
 Route::get('/AllCollection/{idUser}',[GlobalController::class,'AllCollection'])->name("AllCollection");
+Route::get('/viewOneProduct/{idUser}/OneCollection/{idProduct}',[GlobalController::class,'viewOneProduct'])->name("viewOne_Product");
