@@ -9,7 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-<body>
+<body  onLoad="noBack();" >
+{{-- <body  onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload=""> --}}
 @yield('content')
+<script type="text/javascript">
+    window.history.forward();
+  function noBack()
+  {
+      window.history.forward();
+  }
+</script>
 </body>
 </html>

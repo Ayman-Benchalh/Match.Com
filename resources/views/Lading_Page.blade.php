@@ -1,7 +1,7 @@
 @extends('pagePrinc')
 @section("title") Match.Com @endsection
 @section('content')
-<div class="container">
+<div class="container" >
   
     <div class="frame1">
         <img src="{{url('Image/bg_image.svg')}}" alt="bg_image">
@@ -112,4 +112,5 @@
         </div>
     </div>
 </div>  
+
 @endsection

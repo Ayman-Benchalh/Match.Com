@@ -7,13 +7,49 @@
     <div class="part2">
       <ul>
         <li title="send message"><a href="#" ><span><i class="fa-solid fa-comment"></i></span>Message</a></li>
-        <li title="view cart"><a href="#" ><i class="fa-solid fa-cart-shopping"></i></a></li>
-        <li title="Account"><a href="#"><i class="fa-solid fa-user"></i></a></li>
+       
+        <li title="Account"><a id="account" onclick="fonthedininfo(id)"><i class="fa-solid fa-user"></i></a></li>
       </ul>
+      <span class="informa" id="infroUser">
+        <div class="btncloce" id="btncloce" onclick="fonthedininfo(id)"> <i class="fa-solid fa-xmark"></i></div>
+        <div class="prtyimg"><img src="{{ url('Image/userimgsvg.svg') }}" alt="img user"></div>
+        <div class="prtyinfo">
+          <div class="emailname">Email</div>
+          <div class="emaildata"><div class="logo"><i class="fa-regular fa-envelope"></i></div>{{Str::limit($dataUser->email, 15, '...')}}</div>
+          <div class="username">User name</div>
+          <div class="userdata"><div class="logo"><i class="fa-solid fa-user"></i></div>{{ $dataUser->lastName}}{{$dataUser->firstName }}</div>
+          <div class="edutpard" onclick="editeinfo(id)"  id="editeInfo"><a >
+            <div class="partext" >Edite your profile</div>
+            <div class="partylogo"><i class="fa-solid fa-pen"></i></div>
+          </a>
+        </div>
+        <div class="btnlogout"><a href="{{ route('logout') }}">logout</a></div>
+        </div>
+      </span>
+      <div class="cartEditeInfo" id="cartEditeInfo">
+        <div class="btncloce2" onclick="editeinfo(id)" id="btncloce2" > <i class="fa-solid fa-xmark"></i></div>
+        <div class="contentformEdite">
+          <h1>Edite Your Profile</h1>
+          <form action="{{ route('editUser',['idUser'=>$dataUser->idUser]) }}" method="post">
+            @csrf
+            @method('PUT')
+            
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" value="{{ $dataUser->firstName }}">
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" value="{{ $dataUser->lastName }}">
+            <input type="email" name="email" id="email" placeholder="Email" value="{{ $dataUser->email }}">
+            <input type="password" name="password" id="password" placeholder="Insert new ! if you need chenge password " >
+             <button>Edite Profile</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
   <div class="contentimg">
-    <img src="{{ url('Image/imagback.png') }}" alt="img">
+    <video autoplay loop muted>
+       <source src="{{ url('Image/videaopub.mp4') }}" type="video/mp4"></source>
+           
+    </video>
+    <div class="fliter"></div>
     <div class="paraghaphe">Select your best server </div>
   </div>
   <div class="contantpage">
@@ -58,5 +94,34 @@
     <div class="copyrghit">
         Copyright   <i class="fa-solid fa-copyright"></i>  Match.Com
     </div>
-</div>  
+</div> 
+<script >
+
+  const fonthedininfo=(event)=>{
+    const account=document.getElementById('account');
+    const cartinfo=document.getElementById('infroUser');
+    const btncloce=document.getElementById('btncloce');
+    
+    if(event == 'btncloce'){
+      cartinfo.style.transform='translateX(500px)';
+      
+    }else if(event =='account'){
+      cartinfo.style.transform='translateX(0)';
+    }
+  }
+  const editeinfo=(event)=>{
+    const account=document.getElementById('account');
+    const cartinfo=document.getElementById('cartEditeInfo');
+    const btncloce=document.getElementById('btncloce2');
+    
+    if(event == 'btncloce2'){
+      console.log(event);
+      cartinfo.style.transform='translateY(-700px)';
+      
+    }else if(event =='editeInfo'){
+      console.log(event);
+      cartinfo.style.transform='translateY(0)';
+    }
+  }
+</script> 
 @endsection

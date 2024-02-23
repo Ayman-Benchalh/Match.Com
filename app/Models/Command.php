@@ -10,6 +10,15 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Command extends Model
 {
     use HasFactory;
+
+    protected $fillable = [   
+        'idUser',
+        'idAdmin',
+        'idProduct',
+        'datecommand',
+        'statut',
+   
+    ];
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

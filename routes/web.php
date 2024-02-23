@@ -1,6 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 namespace App\Http\Controllers\GlobalController;
+namespace App\Http\Middleware\Auth;
+use Illuminate\Support\Facades\Auth;
+
 
 use App\Http\Controllers\GlobalController;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +30,7 @@ Route::post('/login_Acount',[GlobalController::class,'login_Acount'])->name("log
 
 Route::get('/AllCollection/{idUser}',[GlobalController::class,'AllCollection'])->name("AllCollection");
 Route::get('/viewOneProduct/{idUser}/OneCollection/{idProduct}',[GlobalController::class,'viewOneProduct'])->name("viewOne_Product");
+Route::get('/logout',[GlobalController::class,'logout'])->name("logout")->middleware(['auth','isUser','PreventBackHistoryy']);
+
+Route::post('/commandCollection/{idUser}/CollectionID/{idProduct}',[GlobalController::class,'commandCollection'])->name('commandCollection');
+Route::put('/editUser/{idUser}',[GlobalController::class,'editeUser'])->name('editUser');

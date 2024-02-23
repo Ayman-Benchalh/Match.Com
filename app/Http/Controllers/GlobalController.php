@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Command;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -91,19 +93,69 @@ class GlobalController extends Controller
 
     public function AllCollection($idUser){
         $dataprodt= Product::all();
+        $dataUser=  User::where('idUser',$idUser )->first();
   
-  
-        return view('viewAllProduct',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt]);
+        return view('viewAllProduct',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser]);
     }
     public function viewOneProduct($idUser , $idProduct){
         $dataOneprodt= Product::where('idProduct',$idProduct)->first();
+        $datatheeprodt= Product::where('idProduct','<','3')->get();
         
         $dataOneUser= User::where('idUser',$idUser)->first();
 
+        return view('ViewOneProduct',['idUser'=>$idUser ,'idProduct'=>$idProduct,'dataOneprodt'=> $dataOneprodt,'dataOneUser'=> $dataOneUser ,'datatheeprodt'=>$datatheeprodt]);
+    }
+
+
+
+    public function logout()  {
     
+        request()->session()->flush();
+        Auth::logout();
+        
+    }
+    public function commandCollection($idUser , $idProduct){
+        $dataprodt= Product::all();
+        $dataAdmin = Admin::all()->first();
+        $dataUser =User::where('idUser',$idUser)->first();
+        $dataProdt =Product::where('idProduct',$idProduct)->first();
 
 
-        return view('ViewOneProduct',['idUser'=>$idUser ,'dataOneprodt'=> $dataOneprodt,'dataOneUser'=> $dataOneUser]);
+        Command::create([
+            'idUser'=>$dataUser->idUser,
+            'idAdmin'=>$dataAdmin->idAdmin,
+            'idProduct'=>$dataProdt->idProduct,
+            'datecommand'=>date('Y-m-d'),
+            'statut'=>"Not Paid",
+        ]);
+        
+        return to_route('AllCollection',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser])
+                    ->with('messegeSec','Command is secssus you can Command more product');
+    }
+
+    public function editeUser($idUser) {
+        $dataprodt= Product::all();
+        $dataUser =User::where('idUser',$idUser)->first();
+
+
+
+        $firstName = request()->firstName;
+        $lastName = request()->lastName;
+        $email = request()->email;
+        $password = request()->password;
+
+        request()->validate([
+            'email'=>['email','min:8'],
+            'password'=>['required','min:8'],
+        ]);
+        // User::update([
+        //     'firstName'=>$firstName,
+        //     'lastName'=>$lastName,
+        //     'email'=>$email,
+        //     'password'=>$password,
+        // ]);
+        return to_route('AllCollection',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser]);
+
     }
 }
         
