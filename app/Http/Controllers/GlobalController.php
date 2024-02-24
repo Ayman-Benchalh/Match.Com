@@ -137,18 +137,33 @@ class GlobalController extends Controller
         $dataprodt= Product::all();
         $dataUser =User::where('idUser',$idUser)->first();
 
-
-
         $firstName = request()->firstName;
         $lastName = request()->lastName;
         $email = request()->email;
         $password = request()->password;
+         if($password== null){
+            $password = $dataUser->password;
+        }else{
+           $password = request()->password;
+        };
+        // request()->validate([
+        //     'email'=>['email','min:8'],
+        //     'password'=>['required','min:8'],
+        // ]);
 
-        request()->validate([
-            'email'=>['email','min:8'],
-            'password'=>['required','min:8'],
-        ]);
-        // User::update([
+      User::where('idUser',$idUser)->update([
+        'firstName'=>$firstName,
+        'lastName'=>$lastName,
+        'email'=>$email,
+        'password'=>$password
+    ]);
+        // $dataUser->email=$firstName;
+        // $dataUser->lastName=$lastName;
+        // $dataUser->email=$email;
+        // $dataUser->password=$password;
+        // $dataUser->save();
+
+        //         User::update([
         //     'firstName'=>$firstName,
         //     'lastName'=>$lastName,
         //     'email'=>$email,
