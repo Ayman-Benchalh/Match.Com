@@ -2017,7 +2017,10 @@ height: 620px;
 flex-shrink: 0;
 border-radius: 16px;
 background: rgba(255, 255, 255, 0.80);
-
+overflow: auto;
+overflow-x: hidden;
+position: static;
+border: 0;
 
 }
 .contentBoitMEssage .msgcontrol{
@@ -2115,7 +2118,7 @@ cursor: pointer;
     color: var(--colorWhi);
 }
 .contentBoitMEssage .contentmsg .onemassge .contentOnemessag{
-    width: 864px;
+    width: auto;
     height: auto;
     flex-shrink: 0;
     border-radius: 13px;
@@ -2128,8 +2131,53 @@ cursor: pointer;
     font-weight: 600;
     line-height: 158%; 
     display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.contentBoitMEssage .contentmsg .onemassge .contentOnemessagforUser{
+  
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+}
+.contentBoitMEssage .contentmsg .onemassge .contentOnemessagforAdmin{
+ 
+   
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.contentBoitMEssage .contentmsg .onemassgeofAdmin{
+   background-color: #2604c000;
+}
+.contentBoitMEssage .contentmsg .onemassgeofUser{
+   background-color: #c0040400;
+   width: auto;
+   height: auto;
+display: flex;
+justify-content: right;
+align-items: center;
+flex-direction: row-reverse;
+padding: 20px;
+
+gap: 15px;
+}
+.contentBoitMEssage .contentmsg .iconmaageofUser{
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--verbel_3);
+    font-size: 30px;
+    padding: 5px;
+    color: var(--colorWhi);
 }
 /* finish is style page BoitMEssage*/

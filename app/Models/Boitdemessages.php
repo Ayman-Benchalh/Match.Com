@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class boitdemessages extends Model
 {
-    use HasFactory;   
+    use HasFactory;  
+    protected $table = 'boitdemessages';
+
     protected $fillable = [
         'idAdmin',
         'idUser',

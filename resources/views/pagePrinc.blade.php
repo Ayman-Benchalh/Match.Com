@@ -10,7 +10,7 @@
 
 </head>
 <body  onLoad="noBack()" >
-{{-- <body  onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload=""> --}}
+
 @yield('content')
 <script type="text/javascript">
   

@@ -30,7 +30,7 @@ class GlobalController extends Controller
         $email2=request()->email2;
         $password=request()->password;
         $password2=request()->password2; 
-        // dd($firstname , $lastname ,$email,$email2 , $password,$password2);
+
         
         
         
@@ -47,7 +47,7 @@ class GlobalController extends Controller
                 return back()->withErrors([
                     'email'=>" ! This email it have an Account "
                     ])->onlyinput('email');
-                }else{
+            }else{
                     User::create([
                         'firstName'=>$firstname,
                         'lastName'=>$lastname,
@@ -94,7 +94,7 @@ class GlobalController extends Controller
 
     public function AllCollection($idUser){
         $dataprodt= Product::all();
-        $dataUser=  User::where('idUser',$idUser )->first();
+        $dataUser=  User::where('idUser',$idUser)->first();
   
         return view('viewAllProduct',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser]);
     }
@@ -165,28 +165,36 @@ class GlobalController extends Controller
         $datatheeprodt= Product::where('idProduct','<','3')->get();
         $dataOneUser= User::where('idUser',$idUser)->first();
         $dataAdmin= Admin::all()->first();
+
+        $getallMessag=boitdemessages::all()->where('idUser',$idUser);
+
       
-            return view('BoitMEssage',['idUser'=>$idUser ,'idAdmin'=>$dataAdmin->idAdmin,'dataOneUser'=> $dataOneUser ,'datatheeprodt'=>$datatheeprodt]);
+        return view('BoitMEssage',
+        ['idUser'=>$idUser ,
+        'idAdmin'=>$dataAdmin->idAdmin,
+        'dataOneUser'=> $dataOneUser ,
+        'datatheeprodt'=>$datatheeprodt,
+        "allmessage"=>$getallMessag]);
     }
+
+
     public function sendmessg($idUser,$idAdmin){
+        $datatheeprodt= Product::where('idProduct','<','3')->get();
+        $dataOneUser= User::where('idUser',$idUser)->first();
+        $dataAdmin= Admin::all()->first();
         $mesageuser = request()->messageuser;
         request()->validate([
             "messageuser"=>['required','min:5']
         ]);
  
-        // BoitDeMessage::create([
-        //     "idAdmin"=>$idAdmin,
-        //     "idUser"=>$idUser,
-        //     "messageUser"=>$mesageuser,
-        //     "dateMessageUser"=>date('Y-m-d H:i:s'),
-        // ]);
+        boitdemessages::create([
+            "idAdmin"=>$idAdmin,
+            "idUser"=>$idUser,
+            "messageUser"=>$mesageuser,
+            "dateMessageUser"=>date('Y-m-d H:i:s'),
+        ]);
 
-        $insertdata = New boitdemessages;
-        $insertdata->idAdmin= $idAdmin;
-        $insertdata->idUSer= $idUser;
-        $insertdata->messageUser= $mesageuser;
-        $insertdata->dateMessageUser=date('Y-m-d H:i:s');
-        return "message is inserted";
+        return to_route('boitMessage',['idUser'=>$idUser ,'idAdmin'=>$dataAdmin->idAdmin,'dataOneUser'=> $dataOneUser ,'datatheeprodt'=>$datatheeprodt]);
     }
 }
         

@@ -47,18 +47,36 @@
    <div class="contentmsg">
     <form action="{{ route('sendmessg',['idUser'=>$idUser,'idAdmin'=>$idAdmin]) }}" method="post">
         @csrf
-         <div class="onemassge">
-        <div class="iconmaage"><i class="fa-solid fa-user"></i></div>
-        <div class="contentOnemessag">
-             Hey , with 5 min your account is commplete , if you have a
-            probleme , sennd messag for help you
-        </div>
-    </div>
+         {{-- <div class="onemassge">
+            <div class="iconmaage"><i class="fa-solid fa-user"></i></div>
+            <div class="contentOnemessag">
+                Hey , with 5 min your account is commplete , if you have a
+                probleme , sennd messag for help you
+            </div>
+        </div> --}}
+        @foreach ($allmessage as $onemessage)
+        @if ($onemessage->messageAdmin)
+          <div class="onemassge onemassgeofAdmin">
+          <div class="iconmaage iconmaageofAdmin"><i class="fa-solid fa-user"></i></div>
+          <div class="contentOnemessag contentOnemessagforAdmin">
+                  {{ $onemessage->messageAdmin }}
+          </div>
+          </div> 
+        @elseif ($onemessage->messageUser)
+        <div class="onemassge onemassgeofUser">
+          <div class="iconmaageofUser"><i class="fa-solid fa-user"></i></div>
+          <div class="contentOnemessag contentOnemessagforUser">
+                  {{ $onemessage->messageUser }}
+          </div>
+          </div>
+        @endif
+        
+        @endforeach
    </div>
    <div class="msgcontrol">
     <div class="partyuser"><i class="fa-solid fa-user"></i></div>
     <div class="partymsg">
-        <input type="text" name="messageuser" id="message" placeholder="Send your message here" ~>
+        <input type="text" name="messageuser" id="message" placeholder="Send your message here" >
     </div>
     <div class="sendmsg"><button type="submit"><i class="fa-solid fa-paper-plane"></i></button></div>
    </div>
@@ -134,6 +152,10 @@
       console.log(event);
       cartinfo.style.transform='translateY(0)';
     }
+    // const onemassge=()=>{
+    //   windows.
+    // }
+    // onemassge()
   }
 </script>
 @endsection

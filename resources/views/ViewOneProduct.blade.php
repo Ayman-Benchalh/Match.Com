@@ -6,7 +6,7 @@
     <div class="part1"><h1>Match.Com</h1></div>
     <div class="part2">
       <ul>
-        <li title="send message"><a href="{{ route('AllCollection',$idUser) }}" ><span><i class="fa-solid fa-comment"></i></span>Message</a></li>
+        <li title="send message"><a href="{{ route('boitMessage',$idUser) }}" ><span><i class="fa-solid fa-comment"></i></span>Message</a></li>
        
         <li title="Account"><a id="account" onclick="fonthedininfo(id)"><i class="fa-solid fa-user"></i></a></li>
       </ul>
