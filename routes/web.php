@@ -34,3 +34,6 @@ Route::get('/logout',[GlobalController::class,'logout'])->name("logout")->middle
 
 Route::post('/commandCollection/{idUser}/CollectionID/{idProduct}',[GlobalController::class,'commandCollection'])->name('commandCollection');
 Route::put('/editUser/{idUser}',[GlobalController::class,'editeUser'])->name('editUser');
+
+Route::get("/boitMessage/{idUser}",[GlobalController::class,'boitMessage'])->name('boitMessage');
+Route::post("/sendmessg/User/{idUser}/sendToAdmin/{idAdmin}",[GlobalController::class,'sendmessg'])->name('sendmessg');

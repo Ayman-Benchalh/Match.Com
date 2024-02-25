@@ -6,7 +6,7 @@
     <div class="part1"><h1>Match.Com</h1></div>
     <div class="part2">
       <ul>
-        <li title="send message"><a href="#" ><span><i class="fa-solid fa-comment"></i></span>Message</a></li>
+        <li title="send message"><a href="{{ route('boitMessage',$dataUser->idUser) }}" ><span><i class="fa-solid fa-comment"></i></span>Message</a></li>
        
         <li title="Account"><a id="account" onclick="fonthedininfo(id)"><i class="fa-solid fa-user"></i></a></li>
       </ul>
@@ -44,7 +44,10 @@
       </div>
     </div>
   </div>
-  <div class="contentimg">
+  <div class="contentimg"> 
+    @if(session('success'))
+     <div class="messageSec">{{session('success')}} <div class="close" onclick="reladthispage()"><i class="fa-solid fa-xmark"></i></div></div>
+ @endif
     <video autoplay loop muted>
        <source src="{{ url('Image/videaopub.mp4') }}" type="video/mp4"></source>
            
@@ -122,6 +125,12 @@
       console.log(event);
       cartinfo.style.transform='translateY(0)';
     }
+
+    
   }
+  const reladthispage=()=>{
+    location.reload();
+    
+    }
 </script> 
 @endsection

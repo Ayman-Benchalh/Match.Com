@@ -1554,6 +1554,9 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 letter-spacing: 3.52px;
+cursor: pointer;
+border: none;
+outline: none;
 }
 
 .lastprix{
@@ -1787,6 +1790,11 @@ width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    cursor: pointer;
+  
+}
+.informa .prtyinfo .edutpard {
+    cursor: pointer;
   
 }
 
@@ -1959,4 +1967,169 @@ letter-spacing: 2.2px;
 cursor: pointer;
   
 }
+.messageSec{
+    position: absolute;
+    top: 3%;
+    right: 2%;
+    z-index: 99999;
+    color: #eee;
+    background-color: #37ff055f;
+    border: 2px solid #2ac004b3;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: var(--font_k2d);
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.messageSec .close{
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .5s ease;
+
+}
+.messageSec .close:hover{
+color: crimson;
+
+}
 /* finish page view one product*/
+
+/* this is style page BoitMEssage*/
+
+.contentBoitMEssage{
+    width: 100%;
+    min-height: 90vh;
+    background: rgba(114, 4, 85, 0.70);
+    margin-bottom:  15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px 0;
+}
+.contentBoitMEssage .contentmsg{
+    width: 80%;
+height: 620px;
+flex-shrink: 0;
+border-radius: 16px;
+background: rgba(255, 255, 255, 0.80);
+
+
+}
+.contentBoitMEssage .msgcontrol{
+    display: block;
+    width: 90%;
+height: 100px;
+flex-shrink: 0;
+background-color: #3c075300;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+gap: 20px;
+
+}
+.contentBoitMEssage .msgcontrol .partyuser{
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--verbel_3);
+    font-size: 50px;
+    padding: 10px;
+    color: var(--colorWhi);
+}
+.contentBoitMEssage .msgcontrol .partymsg input{
+    width: 1200px;
+height: 54px;
+flex-shrink: 0;
+border-radius: 17px;
+background: rgba(217, 217, 217, 0.80);
+color: #1a1a1a;
+
+font-family: var(--font_k2d);
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+border: none;
+outline: none;
+text-align: left;
+padding: 10px;
+}
+.contentBoitMEssage .msgcontrol .partymsg input::placeholder{
+    color: #454545;
+    text-align: left;
+    font-family: var(--font_k2d);
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 10px;
+}
+.contentBoitMEssage .msgcontrol .sendmsg button{
+    width: 65px;
+    height: 54px;
+    flex-shrink: 0;
+    border-radius: 10px;
+background: #84FF65;
+color: var(--bgColo);
+border: none;
+outline: none;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+cursor: pointer;
+}
+
+.contentBoitMEssage .contentmsg .onemassge{
+    width: auto;
+    height: auto;
+ display: flex;
+ justify-content: left;
+ align-items: center;
+ flex-direction: row;
+ padding: 20px;
+ background-color: #72045500;
+ gap: 15px;
+}
+
+.contentBoitMEssage .contentmsg .onemassge .iconmaage{
+    width: 37px;
+    height: 37px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #EEC800;
+    font-size: 30px;
+    padding: 5px;
+    color: var(--colorWhi);
+}
+.contentBoitMEssage .contentmsg .onemassge .contentOnemessag{
+    width: 864px;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: rgba(82, 82, 82, 0.70);
+    color: var(--colorWhi);
+    text-align: center;
+    font-family: var(--font_k2d);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 158%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+/* finish is style page BoitMEssage*/

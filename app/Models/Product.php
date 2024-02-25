@@ -9,8 +9,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Product extends Model
 {
     use HasFactory;
+ 
     public function command(): BelongsTo
     {
         return $this->belongsTo(Command::class);
     }
+    
 }

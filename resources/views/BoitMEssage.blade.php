@@ -6,7 +6,7 @@
     <div class="part1"><h1>Match.Com</h1></div>
     <div class="part2">
       <ul>
-        <li title="send message"><a href="{{ route('AllCollection',$idUser) }}" ><span><i class="fa-solid fa-comment"></i></span>Message</a></li>
+        <li title="send message"><a href="#" ><span><i class="fa-solid fa-comment"></i></span>Message</a></li>
        
         <li title="Account"><a id="account" onclick="fonthedininfo(id)"><i class="fa-solid fa-user"></i></a></li>
       </ul>
@@ -43,96 +43,27 @@
       </div>
     </div>
   </div>
-<div class="contentOnprodcut">
-    <div class="partone">                                                                       
-        <div class="cart">
-            <img src="{{ url('Image/cartimag.svg') }}" alt="">
-            <a href="#">
-                  <h1 class="titlecart"> {{  $dataOneprodt->nom }}</h1>
-                  <div class="savecart"> {{  $dataOneprodt->sauvegarder }}</div>
-                  <div class="prixcart"> {{  $dataOneprodt->prix }} $</div>
-                  <div class="desination">
-                    <ul>
-                      <li><i class="fa-solid fa-check"></i> {{  $dataOneprodt->desination1 }}</li>
-                      <li><i class="fa-solid fa-check"></i> {{  $dataOneprodt->desination2 }}</li>
-                      <li><i class="fa-solid fa-check"></i> {{  $dataOneprodt->desination3 }}</li>
-                      <li><i class="fa-solid fa-check"></i> {{  $dataOneprodt->desination4 }}</li>
-                      <li><i class="fa-solid fa-check"></i> {{  $dataOneprodt->desination5 }}</li>
-                      <li><i class="fa-solid fa-check"></i> {{  $dataOneprodt->desination6 }}</li>
-                    </ul>
-                  </div>
-            </a>
-      </div>
-    </div>
-    <div class="parttwo">
-          <div class="contentInform">
-          <div class="titleproduct">{{  $dataOneprodt->nom }} iptv 4k Good Quality </div>
-          <div class="line"></div>
-          <div class="namUser">User Name : {{$dataOneUser->lastName}} {{$dataOneUser->firstName}}</div>
-          <div class="emailUser">Your email : {{ $dataOneUser->email }} </div>
-          <div class="feedback">Feedbacks : 
-              @if ($dataOneprodt->prix <15) 
-              <span class='star2'>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-              @elseif ($dataOneprodt->prix <=20)
-              <span class='star3'>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-
-
-              </span>
-              @elseif ($dataOneprodt->prix <=30)
-              <span class='star4'>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star"></i>
-            
-              </span>
-              @elseif ($dataOneprodt->prix >=30)
-              <span class='star5'>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-        
-              </span>
-              @elseif ($dataOneprodt->prix >10)
-              <span class='star1'>
-                  <i class="fa-solid fa-star" style="color: #EEC800"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-              
-          
-              </span>
-            
-          @endif
-          
-          </div>
-          <div class="Datefinish">Date finishe : {{ date('d/m/Y') }}</div>
-          <div class="TotalPrix">Total Prix : {{  $dataOneprodt->prix }} $   <span class="lastprix">{{ $dataOneprodt->prix +49 }} $</span></div> 
-
-          <div class="twobtn">
-              <a href="{{ route('AllCollection',$idUser,$idProduct) }}" class="goback"> GO BACK</a>
-          <form action="{{ route('commandCollection',['idUser'=>$idUser , 'idProduct'=>$idProduct])}}" method="post">
-            @csrf
-                <button class="paynow">Pay now</button>
-       </form>
+<div class="contentBoitMEssage">
+   <div class="contentmsg">
+    <form action="{{ route('sendmessg',['idUser'=>$idUser,'idAdmin'=>$idAdmin]) }}" method="post">
+        @csrf
+         <div class="onemassge">
+        <div class="iconmaage"><i class="fa-solid fa-user"></i></div>
+        <div class="contentOnemessag">
+             Hey , with 5 min your account is commplete , if you have a
+            probleme , sennd messag for help you
         </div>
-          </div>
     </div>
+   </div>
+   <div class="msgcontrol">
+    <div class="partyuser"><i class="fa-solid fa-user"></i></div>
+    <div class="partymsg">
+        <input type="text" name="messageuser" id="message" placeholder="Send your message here" ~>
+    </div>
+    <div class="sendmsg"><button type="submit"><i class="fa-solid fa-paper-plane"></i></button></div>
+   </div>
+    </form>
+   
 
 </div>
 <div class="contentViewAther">

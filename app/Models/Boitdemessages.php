@@ -6,9 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class BoitDeMessage extends Model
+class boitdemessages extends Model
 {
-    use HasFactory;
+    use HasFactory;   
+    protected $fillable = [
+        'idAdmin',
+        'idUser',
+        'messageUser',
+        'dateMessageUser',
+    ];
     public function user(): HasOne
     {
         return $this->HasOne(User::class);
@@ -17,4 +23,6 @@ class BoitDeMessage extends Model
     {
         return $this->HasOne(Admin::class);
     }
+ 
+
 }

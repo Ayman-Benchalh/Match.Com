@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\boitdemessages;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Command;
@@ -103,7 +104,8 @@ class GlobalController extends Controller
         
         $dataOneUser= User::where('idUser',$idUser)->first();
 
-        return view('ViewOneProduct',['idUser'=>$idUser ,'idProduct'=>$idProduct,'dataOneprodt'=> $dataOneprodt,'dataOneUser'=> $dataOneUser ,'datatheeprodt'=>$datatheeprodt]);
+        return view('ViewOneProduct',
+        ['idUser'=>$idUser ,'idProduct'=>$idProduct,'dataOneprodt'=> $dataOneprodt,'dataOneUser'=> $dataOneUser ,'datatheeprodt'=>$datatheeprodt]);
     }
 
 
@@ -130,7 +132,7 @@ class GlobalController extends Controller
         ]);
         
         return to_route('AllCollection',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser])
-                    ->with('messegeSec','Command is secssus you can Command more product');
+                    ->withSuccess('Command is secssus you can Command more product');
     }
 
     public function editeUser($idUser) {
@@ -146,31 +148,45 @@ class GlobalController extends Controller
         }else{
            $password = request()->password;
         };
-        // request()->validate([
-        //     'email'=>['email','min:8'],
-        //     'password'=>['required','min:8'],
-        // ]);
-
+       
       User::where('idUser',$idUser)->update([
         'firstName'=>$firstName,
         'lastName'=>$lastName,
         'email'=>$email,
-        'password'=>$password
+        'password'=>hash::make($password)
     ]);
-        // $dataUser->email=$firstName;
-        // $dataUser->lastName=$lastName;
-        // $dataUser->email=$email;
-        // $dataUser->password=$password;
-        // $dataUser->save();
-
-        //         User::update([
-        //     'firstName'=>$firstName,
-        //     'lastName'=>$lastName,
-        //     'email'=>$email,
-        //     'password'=>$password,
-        // ]);
+        
         return to_route('AllCollection',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser]);
 
+    }
+
+
+    public function boitMessage($idUser){
+        $datatheeprodt= Product::where('idProduct','<','3')->get();
+        $dataOneUser= User::where('idUser',$idUser)->first();
+        $dataAdmin= Admin::all()->first();
+      
+            return view('BoitMEssage',['idUser'=>$idUser ,'idAdmin'=>$dataAdmin->idAdmin,'dataOneUser'=> $dataOneUser ,'datatheeprodt'=>$datatheeprodt]);
+    }
+    public function sendmessg($idUser,$idAdmin){
+        $mesageuser = request()->messageuser;
+        request()->validate([
+            "messageuser"=>['required','min:5']
+        ]);
+ 
+        // BoitDeMessage::create([
+        //     "idAdmin"=>$idAdmin,
+        //     "idUser"=>$idUser,
+        //     "messageUser"=>$mesageuser,
+        //     "dateMessageUser"=>date('Y-m-d H:i:s'),
+        // ]);
+
+        $insertdata = New boitdemessages;
+        $insertdata->idAdmin= $idAdmin;
+        $insertdata->idUSer= $idUser;
+        $insertdata->messageUser= $mesageuser;
+        $insertdata->dateMessageUser=date('Y-m-d H:i:s');
+        return "message is inserted";
     }
 }
         
