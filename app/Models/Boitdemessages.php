@@ -13,6 +13,8 @@ class boitdemessages extends Model
 
     protected $fillable = [
         'idAdmin',
+        'messageAdmin',
+        'dateMessageAdmin',
         'idUser',
         'messageUser',
         'dateMessageUser',

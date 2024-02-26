@@ -54,6 +54,7 @@ class GlobalController extends Controller
                         'email'=>$email,
                         'password'=>hash::make($password),
                     ]);
+                   
                     return  view("loginpage");
                 }
                 
@@ -95,7 +96,20 @@ class GlobalController extends Controller
     public function AllCollection($idUser){
         $dataprodt= Product::all();
         $dataUser=  User::where('idUser',$idUser)->first();
-  
+        $dataAdmin=  Admin::all()->first();
+        $databoitmessage = boitdemessages::where('iduser',$idUser)->first();
+     
+       if(!$databoitmessage){
+         boitdemessages::create([
+            'idAdmin'=>$dataAdmin->idAdmin,
+            'messageAdmin'=>'Hey, in 5 min your account will be complete, if you have a problem, send a message to help you',
+            'dateMessageAdmin'=>date('Y-m-d H:i:s'),
+            'idUser'=>$idUser,
+        ]);
+       }else{
+     
+       }
+     
         return view('viewAllProduct',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser]);
     }
     public function viewOneProduct($idUser , $idProduct){
@@ -195,6 +209,22 @@ class GlobalController extends Controller
         ]);
 
         return to_route('boitMessage',['idUser'=>$idUser ,'idAdmin'=>$dataAdmin->idAdmin,'dataOneUser'=> $dataOneUser ,'datatheeprodt'=>$datatheeprodt]);
+    }
+
+
+    public function resetPassword(){
+        return view("resatPasssword");
+    }
+
+    public function resstpasUser(){
+
+        $email=request()->email;
+        request()->validate([
+            'email'=>['email','required','min:5']
+        ]);
+        // dd(Auth::attempt(["email"=>$email,"password"=>null]));
+        // if(Auth::attempt(["email"=>$email])){}
+        return 'hello this is page resset';
     }
 }
         

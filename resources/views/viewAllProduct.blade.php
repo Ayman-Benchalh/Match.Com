@@ -17,7 +17,7 @@
           <div class="emailname">Email</div>
           <div class="emaildata"><div class="logo"><i class="fa-regular fa-envelope"></i></div>{{Str::limit($dataUser->email, 15, '...')}}</div>
           <div class="username">User name</div>
-          <div class="userdata"><div class="logo"><i class="fa-solid fa-user"></i></div>{{ $dataUser->lastName}}{{$dataUser->firstName }}</div>
+          <div class="userdata"><div class="logo"><i class="fa-solid fa-user"></i></div>{{ $dataUser->lastName}} {{$dataUser->firstName }}</div>
           <div class="edutpard" onclick="editeinfo(id)"  id="editeInfo"><a >
             <div class="partext" >Edite your profile</div>
             <div class="partylogo"><i class="fa-solid fa-pen"></i></div>

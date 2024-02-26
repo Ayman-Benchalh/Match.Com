@@ -6,8 +6,8 @@
     <div class="part1"><h1>Match.Com</h1></div>
     <div class="part2">
       <ul>
-        <li title="send message"><a href="#" ><span><i class="fa-solid fa-comment"></i></span>Message</a></li>
-       
+        <li ></li>
+        <li title="Home"><a href="{{ route('AllCollection',$idUser) }}"><i class="fa-solid fa-house"></i></a></li>
         <li title="Account"><a id="account" onclick="fonthedininfo(id)"><i class="fa-solid fa-user"></i></a></li>
       </ul>
       <span class="informa" id="infroUser">
@@ -17,7 +17,7 @@
           <div class="emailname">Email</div>
           <div class="emaildata"><div class="logo"><i class="fa-regular fa-envelope"></i></div>{{Str::limit($dataOneUser->email, 15, '...')}}</div>
           <div class="username">User name</div>
-          <div class="userdata"><div class="logo"><i class="fa-solid fa-user"></i></div>{{ $dataOneUser->lastName}}{{$dataOneUser->firstName }}</div>
+          <div class="userdata"><div class="logo"><i class="fa-solid fa-user"></i></div>{{ $dataOneUser->lastName}} {{$dataOneUser->firstName }}</div>
           <div class="edutpard" onclick="editeinfo(id)" id="editeInfo"><a >
             <div class="partext">Edite your profile</div>
             <div class="partylogo"><i class="fa-solid fa-pen"></i></div>

@@ -38,3 +38,5 @@ Route::put('/editUser/{idUser}',[GlobalController::class,'editeUser'])->name('ed
 
 Route::get("/boitMessage/{idUser}",[GlobalController::class,'boitMessage'])->name('boitMessage');
 Route::post("/sendmessg/User/{idUser}/sendToAdmin/{idAdmin}",[GlobalController::class,'sendmessg'])->name('sendmessg');
+Route::get("/resetPassword",[GlobalController::class,'resetPassword'])->name('resetPassword');
+Route::post("/resstpasUser",[GlobalController::class,'resstpasUser'])->name('resstpasUser');
