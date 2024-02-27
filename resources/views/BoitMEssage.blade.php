@@ -47,13 +47,7 @@
    <div class="contentmsg">
     <form action="{{ route('sendmessg',['idUser'=>$idUser,'idAdmin'=>$idAdmin]) }}" method="post">
         @csrf
-         {{-- <div class="onemassge">
-            <div class="iconmaage"><i class="fa-solid fa-user"></i></div>
-            <div class="contentOnemessag">
-                Hey , with 5 min your account is commplete , if you have a
-                probleme , sennd messag for help you
-            </div>
-        </div> --}}
+    
         @foreach ($allmessage as $onemessage)
         @if ($onemessage->messageAdmin)
           <div class="onemassge onemassgeofAdmin">

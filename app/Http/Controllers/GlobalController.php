@@ -106,8 +106,6 @@ class GlobalController extends Controller
             'dateMessageAdmin'=>date('Y-m-d H:i:s'),
             'idUser'=>$idUser,
         ]);
-       }else{
-     
        }
      
         return view('viewAllProduct',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser]);
@@ -212,19 +210,6 @@ class GlobalController extends Controller
     }
 
 
-    public function resetPassword(){
-        return view("resatPasssword");
-    }
-
-    public function resstpasUser(){
-
-        $email=request()->email;
-        request()->validate([
-            'email'=>['email','required','min:5']
-        ]);
-        // dd(Auth::attempt(["email"=>$email,"password"=>null]));
-        // if(Auth::attempt(["email"=>$email])){}
-        return 'hello this is page resset';
-    }
+   
 }
         

@@ -1,11 +1,13 @@
 <?php
 namespace App\Http\Controllers;
 namespace App\Http\Controllers\GlobalController;
+namespace App\Http\Controllers\Forgetpasswordreset;
 namespace App\Http\Middleware\Auth;
 use Illuminate\Support\Facades\Auth;
 
 
 use App\Http\Controllers\GlobalController;
+use App\Http\Controllers\Forgetpasswordreset;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,5 +40,11 @@ Route::put('/editUser/{idUser}',[GlobalController::class,'editeUser'])->name('ed
 
 Route::get("/boitMessage/{idUser}",[GlobalController::class,'boitMessage'])->name('boitMessage');
 Route::post("/sendmessg/User/{idUser}/sendToAdmin/{idAdmin}",[GlobalController::class,'sendmessg'])->name('sendmessg');
-Route::get("/resetPassword",[GlobalController::class,'resetPassword'])->name('resetPassword');
-Route::post("/resstpasUser",[GlobalController::class,'resstpasUser'])->name('resstpasUser');
+
+
+
+
+Route::get("/forgetPassword",[Forgetpasswordreset::class,'forgetPassword'])->name('forgetPassword');
+Route::post("/forgetpassswordUser",[Forgetpasswordreset::class,'forgetpassswordUser'])->name('forgetpassswordUser');
+Route::get("/resetPassword/{token}",[Forgetpasswordreset::class,'resetPassword'])->name('resetPassword');
+Route::post("/resetPassworduser",[Forgetpasswordreset::class,'resetPassworduser'])->name('resetPassworduser');

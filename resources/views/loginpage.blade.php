@@ -11,7 +11,9 @@
                   <div class="btnrollcak2"><a href="{{ route('ladingPage') }}"><i class="fa-solid fa-xmark"></i></a></div>
                   <form action="{{ route('login_Acount') }}" method="POST">
                         @csrf
-
+                        @if(session('success'))
+                        <div class="messageSec">{{session('success')}} <div class="close" onclick="reladthispage()"><i class="fa-solid fa-xmark"></i></div></div>
+                        @endif
                         @error('email')<span class="errorMessage1">{{ $message }}</span>@enderror
                         @error('password')<span class="errorMessage2">{{ $message }}</span>@enderror
                         <input type="email" required name="email" id="email" placeholder="email" value="{{ old('email') }}">
@@ -19,7 +21,7 @@
                         <div class="passparty">
                               <input type="password" required placeholder="password" name="password" id="password3">
                               <label for="password" id="forpass3" onclick="myfunc()"><i class="fa-solid fa-lock"></i></label>
-                              <a href="{{ route('resetPassword') }}" class="liinds">reset your password here</a>
+                              <a href="{{ route('forgetPassword') }}" class="liinds">reset your password here</a>
                         </div>
                         <button type="submit">Login now</button>
                          </form>
@@ -44,6 +46,10 @@
        }
        
         }
+        const reladthispage=()=>{
+    location.reload();
+    
+    }
      
     </script>
 @endsection
