@@ -14,6 +14,7 @@
                        
                         @error('password')<span class="errorMessage2">{{ $message }}</span>@enderror
                         <input type="text"  hidden name="token" value="{{ $token }}">
+                        <input type="email" name="email" id="email" placeholder="your email">
                          <input type="password"  placeholder="New Password" name="password" id="password">
                         <input type="password"  placeholder="Confirme Password" name="password_confirm" id="password_confirm">
                        

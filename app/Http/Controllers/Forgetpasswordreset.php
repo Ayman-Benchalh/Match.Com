@@ -21,7 +21,7 @@ class Forgetpasswordreset extends Controller
 
         $email=request()->email;
         $request->validate([
-            'email'=>['email','required','min:5']
+            'email'=>['email','exists:users,email','required','min:5']
         ]);
         $token =Str::random(64);
         DB::table('password_reset_tokens')->insert([
@@ -43,23 +43,21 @@ class Forgetpasswordreset extends Controller
     }
     function resetPassworduser(Request $request){
        $request->validate([
-        'email'=>["email",'exists:users,email','required','min:8'],
-        'password'=>['required','min:8','confirmed'],
-        'password_confirm'=>['required','min:8'],
-       ]);
+        'email'=>["email","exists:users,email",'required','min:8'],
+        'password'=>['required','min:8'],
+
+
+    ]);
 
        $updatedataINtableReset = DB::table('password_reset_tokens')
-       ->where([
-        'email'=>$request->email,
-        'token'=>$request->token,
-       ])->first();
+       ->where(['email'=>$request->email])->first();
        if(!$updatedataINtableReset){
-        return to_route('resetPassword')->with('erreur','Invalid ');
+        return to_route('forgetPassword')->with('erreur','Invalid ');
        }
 
-        User::where('email',$request->emai)->update(['password'=>Hash::make( $request->password)]);
+        User::where('email',$request->email)->update(['password'=>Hash::make( $request->password)]);
 
-        DB::table('password_reset_tokens')->where(['email'=>$request->email,])->delete();
-        return to_route('loginPage')->with('success',"your password is Shenget ");
+        DB::table('password_reset_tokens')->where(['email'=>$request->email])->delete();
+        return to_route('loginPage')->with('successmsg',"your password is Shenget ");
     }
 }

@@ -2271,3 +2271,37 @@ cursor: pointer;
 outline: none;
 
 }
+
+.containtEmail{
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorWhi);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+.containtEmail h1{
+    width: 100%;
+    text-align: left;
+    color: var(--verbel_3);
+    color: var(--verbel_3);
+    font-family: var(--font_k2d);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.containtEmail a{
+    color: var(--font_k2d);
+    padding: 15px;
+background-color: var(--verbel_3);
+border-radius: 10px;
+font-size: 20px;
+font-weight: 600;
+font-family:var(--font_k2d) ;
+line-height:normal ;
+text-decoration: none;
+}
