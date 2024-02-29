@@ -41,8 +41,8 @@ class Forgetpasswordreset extends Controller
             'created_at'=>Carbon::now()
         ]);
         }
-  
-        Mail::send('Emailtemplet',['token'=>$token],
+        $userName = User::where('email',$email)->first();
+        Mail::send('Emailtemplet',['token'=>$token ,'fisrtName'=>$userName->firstName,'lastName'=>$userName->lastName],
         function($message) use ($request){
             $message->to($request->email);
             $message->subject('Reset Password');

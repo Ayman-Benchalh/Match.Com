@@ -95,7 +95,7 @@
 
 <div class="containtEmail" >
 <div class="Subject">Subject: Password Reset Request</div> 
-<div class="DearUser">Dear User,</div>
+<div class="DearUser">Dear {{ $fisrtName }} {{  $lastName }}</div>
 <div class="sometitle">
     We have received a request to reset your password for MatchCom. To proceed with the password reset, please follow the instructions below:</div>
 
