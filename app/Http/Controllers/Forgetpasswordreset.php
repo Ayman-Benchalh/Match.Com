@@ -24,11 +24,24 @@ class Forgetpasswordreset extends Controller
             'email'=>['email','exists:users,email','required','min:5']
         ]);
         $token =Str::random(64);
-        DB::table('password_reset_tokens')->insert([
+        $datavaler = DB::table('password_reset_tokens')->where('email',$email)->first();
+       
+        if($datavaler){ 
+          
+            DB::table('password_reset_tokens')->update([
+                'email'=> $email,
+                'token'=>$token,
+                'created_at'=>Carbon::now()
+            ]);
+        }else{
+            
+            DB::table('password_reset_tokens')->insert([
             'email'=> $email,
             'token'=>$token,
             'created_at'=>Carbon::now()
         ]);
+        }
+  
         Mail::send('Emailtemplet',['token'=>$token],
         function($message) use ($request){
             $message->to($request->email);
