@@ -49,7 +49,7 @@ class Forgetpasswordreset extends Controller
         });
      
         return redirect()->to(route('loginPage'))
-        ->with('message',"Admin send message to your email reset password");
+        ->with('success',"check your email for a reset password");
     }
     function resetPassword($token){
         return view('ResetPassword',compact('token'));
@@ -71,6 +71,6 @@ class Forgetpasswordreset extends Controller
         User::where('email',$request->email)->update(['password'=>Hash::make( $request->password)]);
 
         DB::table('password_reset_tokens')->where(['email'=>$request->email])->delete();
-        return to_route('loginPage')->with('successmsg',"your password is Shenget ");
+        return to_route('loginPage')->with('success',"Password is changed");
     }
 }
