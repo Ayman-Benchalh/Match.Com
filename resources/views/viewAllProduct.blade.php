@@ -54,6 +54,7 @@
     </video>
     <div class="fliter"></div>
     <div class="paraghaphe">Select your best server </div>
+    <div class="iconbuttom"><i class="fa-solid fa-angles-down"></i></div>
   </div>
   <div class="contantpage">
     <div class="title"> All Collection </div>
