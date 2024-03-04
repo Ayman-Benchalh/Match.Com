@@ -165,7 +165,7 @@ class GlobalController extends Controller
         'firstName'=>$firstName,
         'lastName'=>$lastName,
         'email'=>$email,
-        'password'=>hash::make($password)
+        'password'=>$password
     ]);
         
         return to_route('AllCollection',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser]);

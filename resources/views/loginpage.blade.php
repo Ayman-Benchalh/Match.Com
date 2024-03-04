@@ -14,6 +14,7 @@
                         @if(session('success'))
                         <div class="messageSec" style="width: 85%;top: -13% ;right :3%">{{session('success')}} <div class="close" onclick="reladthispage()"> <i class="fa-solid fa-xmark"></i></div></div>
                         @endif 
+                       
                        @error('email')<span class="errorMessage1">{{ $message }}</span>@enderror
                         @error('password')<span class="errorMessage2">{{ $message }}</span>@enderror
                         <input type="email" required name="email" id="email" placeholder="email" value="{{ old('email') }}">
