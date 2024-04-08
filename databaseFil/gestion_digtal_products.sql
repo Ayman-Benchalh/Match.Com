@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2024 at 09:14 AM
+-- Generation Time: Mar 20, 2024 at 11:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -91,7 +91,12 @@ INSERT INTO `boitdemessages` (`idBoitdemessgae`, `idAdmin`, `messageAdmin`, `dat
 (25, NULL, 'goood message', NULL, 10, NULL, NULL, NULL, NULL),
 (26, 1, NULL, NULL, 3, 'i command some product , and i not paid wath solition for this', '2024-02-25 17:29:30', '2024-02-25 16:29:30', '2024-02-25 16:29:30'),
 (32, 1, 'Hey, in 5 min your account will be complete, if you have a problem, send a message to help you', '2024-02-26 16:00:59', 12, NULL, NULL, '2024-02-26 15:00:59', '2024-02-26 15:00:59'),
-(33, 1, NULL, NULL, 12, 'i command some product , and i not paid wath solition for this', '2024-02-26 16:01:29', '2024-02-26 15:01:29', '2024-02-26 15:01:29');
+(33, 1, NULL, NULL, 12, 'i command some product , and i not paid wath solition for this', '2024-02-26 16:01:29', '2024-02-26 15:01:29', '2024-02-26 15:01:29'),
+(34, 1, 'Hey, in 5 min your account will be complete, if you have a problem, send a message to help you', '2024-03-01 09:09:01', 6, NULL, NULL, '2024-03-01 08:09:01', '2024-03-01 08:09:01'),
+(35, 1, NULL, NULL, 6, 'i command some product , and i not paid wath solition for this', '2024-03-03 19:37:33', '2024-03-03 18:37:33', '2024-03-03 18:37:33'),
+(36, 1, 'Hey, in 5 min your account will be complete, if you have a problem, send a message to help you', '2024-03-05 08:24:35', 13, NULL, NULL, '2024-03-05 07:24:35', '2024-03-05 07:24:35'),
+(37, 1, 'Hey, in 5 min your account will be complete, if you have a problem, send a message to help you', '2024-03-05 10:06:36', 14, NULL, NULL, '2024-03-05 09:06:36', '2024-03-05 09:06:36'),
+(38, 1, NULL, NULL, 6, 'hey admin i have probleme', '2024-03-05 10:11:53', '2024-03-05 09:11:53', '2024-03-05 09:11:53');
 
 -- --------------------------------------------------------
 
@@ -124,7 +129,8 @@ INSERT INTO `commands` (`idcommand`, `datecommand`, `statut`, `created_at`, `upd
 (20, '2024-02-25', 'Not Paid', '2024-02-25 02:06:29', '2024-02-25 02:06:29', 1, 9, 2),
 (21, '2024-02-25', 'Not Paid', '2024-02-25 15:45:02', '2024-02-25 15:45:02', 1, 10, 0),
 (22, '2024-02-25', 'Not Paid', '2024-02-25 15:57:14', '2024-02-25 15:57:14', 1, 10, 2),
-(23, '2024-02-25', 'Not Paid', '2024-02-25 16:21:24', '2024-02-25 16:21:24', 1, 3, 1);
+(23, '2024-02-25', 'Not Paid', '2024-02-25 16:21:24', '2024-02-25 16:21:24', 1, 3, 1),
+(24, '2024-03-05', 'Not Paid', '2024-03-05 09:07:30', '2024-03-05 09:07:30', 1, 14, 0);
 
 -- --------------------------------------------------------
 
@@ -180,13 +186,6 @@ CREATE TABLE `password_reset_tokens` (
   `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `password_reset_tokens`
---
-
-INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
-('aymanbenchalh53@gmail.com', 'muINTx6tMznTZkKIifhaY5uqjsMuSQYIMY9qBxqb9g08WIAqtqvKuWGrGwW64XgC', '2024-02-27 00:09:19');
 
 -- --------------------------------------------------------
 
@@ -271,13 +270,15 @@ INSERT INTO `users` (`idUser`, `firstName`, `lastName`, `email`, `email_verified
 (3, 'marouan', 'marouan', 'marouanmarouan@gmail.com', NULL, '$2y$12$iwwIUVfztyK7DbLE3ADijOPjFOsu2SAnfa0LHRBnGKO3W8G8BAmgC', NULL, '2024-02-16 10:57:16', '2024-02-16 10:57:16'),
 (4, 'khalid', 'khalid', 'khalidkhalid@gmail.com', NULL, '$2y$12$fWQkfcJCa0kT6RdAHTJRt.tbHG1tkPfmibuRtUq0wiud2aOAUQNDW', NULL, '2024-02-16 10:58:29', '2024-02-16 10:58:29'),
 (5, 'ayman4512', 'ayman4512', 'ayman4512ayman4512@gmail.com', NULL, '$2y$12$PZeiJ0u0KUC4DNe.N1fv/ulIYLETv505shzKrXkMM0ZQu/VIkffOe', NULL, '2024-02-16 11:09:57', '2024-02-16 11:09:57'),
-(6, 'ayman14', 'benchalh', 'aymanbenchalh53@gmail.com', NULL, '$2y$12$MrwyE7j31TejtZx8mWbwkOYBBDFGyRtgaEMcWnLAoLEJAcYgfaio6', NULL, '2024-02-20 21:59:25', '2024-02-25 00:04:37'),
+(6, 'ayman2023', 'benchalh778', 'aymanbenchalh53@gmail.com', NULL, '$2y$12$kQod25PLSIM0M44Z5iDxMuib.QzmJspNRWKhAad6ytm6Zt1TicPwm', NULL, '2024-02-20 21:59:25', '2024-03-05 09:11:16'),
 (7, 'maroua', 'maroua', 'maroua152@gmail.com', NULL, '$2y$12$XVCJXDlil6MF61n8B/xTfuhiyzfIGT/B84YDww/CQrwiTWTuAXM7O', NULL, '2024-02-20 22:50:52', '2024-02-20 22:50:52'),
 (8, 'outman', 'outman', 'outman@gmail.com', NULL, '$2y$12$omd.X/sRaWxBN6K2ajnITuDyxNSqxvYjTDP3daGcD9pnlvVXPfEHe', NULL, '2024-02-21 14:54:04', '2024-02-21 14:54:04'),
 (9, 'hakiam47', 'hakiam', 'hakiam@gamil.com', NULL, '$2y$12$MJZJf2DDjZ8hAF2NesMEsuAtci6LxbLkasvDh/2UAjbnrE7X3auYy', NULL, '2024-02-23 02:45:16', '2024-02-25 02:04:36'),
 (10, 'mohmmed204', 'mohmmed', 'mohmmeda2023@gmail.com', NULL, '$2y$12$U2/92IGZXOAnwMIGGQScJ.HaQsLGArFWzX21i3wCUzj6AqNI8S2t2', NULL, '2024-02-25 15:34:50', '2024-02-25 15:42:34'),
 (11, 'salim12', 'salim', 'salim@gmail.com', NULL, '$2y$12$ha3s52R8c6j7zv9/zJHfYectFbnPGUpFFMGZym1NSwVQQSIiCjwR2', NULL, '2024-02-26 14:36:48', '2024-02-26 14:37:40'),
-(12, 'ayman', 'benchalh', 'aymanbenchalh12@gmail.com', NULL, '$2y$12$hVVWBOul2TxaOIMRtPOP0.YAlKrfs.jwSNjNOsM1s8HK09Tv9JpIC', NULL, '2024-02-26 14:53:25', '2024-02-26 14:53:25');
+(12, 'ayman', 'benchalh', 'aymanbenchalh12@gmail.com', NULL, '$2y$12$hVVWBOul2TxaOIMRtPOP0.YAlKrfs.jwSNjNOsM1s8HK09Tv9JpIC', NULL, '2024-02-26 14:53:25', '2024-02-26 14:53:25'),
+(13, 'benchalh', 'benchalh', 'benchalh@gmail.com', NULL, '$2y$12$OhFKzfR11MoxpYV5vws1m.fCEKthIngf809ktcEdGctvFuy5tb/d2', NULL, '2024-03-05 07:24:28', '2024-03-05 07:24:28'),
+(14, 'ofppt1212', 'ofppt', 'ofppt@gmail.com', NULL, '$2y$12$ggUpXExaatpWwfTS.J/BG.WbWVRX0gx7NGDNlIv9lEhLdvOjFh8b.', NULL, '2024-03-05 09:06:18', '2024-03-05 09:09:34');
 
 --
 -- Indexes for dumped tables
@@ -361,13 +362,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `boitdemessages`
 --
 ALTER TABLE `boitdemessages`
-  MODIFY `idBoitdemessgae` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `idBoitdemessgae` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `commands`
 --
 ALTER TABLE `commands`
-  MODIFY `idcommand` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idcommand` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -397,7 +398,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `idUser` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idUser` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
