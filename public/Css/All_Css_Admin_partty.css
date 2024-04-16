@@ -467,14 +467,16 @@ line-height: normal;
 /*User dashbord*/
 .showUser{
 width: 85%;
-height: 450px;
+min-height: 450px;
 margin: auto;
 background-color: #910a6600;
 display: flex;
-justify-content: space-around;
+justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 position: relative;
+gap: 15px;
+padding: 15px 0;
 }
 .totalUser{
     position: absolute;
@@ -619,7 +621,7 @@ list-style-type: none;
 
 .editeUser{
     width: 80%;
-height: 232px;
+min-height: 232px;
 flex-shrink: 0;
 border-radius: 14px;
 background: #3C0753;
@@ -628,19 +630,30 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 flex-direction: column;
+gap: 15px;
+padding: 15px ;
 }
 .editeUser ul li{
 list-style-type: none;
 }
 .editeUser .Useredite{
 width: 95%;
+height: auto;
 background-color: #b7090900;
 margin: auto;
-}
-.editeUser .Useredite ul{
 display: flex;
 justify-content: space-between;
 align-items: center;
+flex-wrap: wrap;
+}
+.editeUser .Useredite ul{
+    width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+background-color: #2ac00400;
+gap: 15px;
 }
 .editeUser .Useredite .testUsername{
     color: #FFF;
@@ -677,6 +690,10 @@ margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+background-color: #2ac00400;
+gap: 15px;
+
     }
 .editeUser .typeabonne .testAbonne{
     color: #FFF;
@@ -708,16 +725,26 @@ margin: auto;
 width: 95%;
 background-color: #b7090900;
 margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 15px;
 }
 .editeUser .btnedite ul{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #62048b00;
 }
 .editeUser .btnedite ul li{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 .editeUser .btnedite .testbtn{

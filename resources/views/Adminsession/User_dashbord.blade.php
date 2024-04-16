@@ -77,7 +77,7 @@
 
 
 
-{{-- begin user loop --}}
+                {{-- begin user loop --}}
 
 
 
@@ -97,10 +97,10 @@
                         </svg>
                   </div>
                   <div class="nameUser">
-                       {{$client->firstName ." ".$client->lastName}}
+                       {{Str::limit($client->firstName ." ".$client->lastName, 15, '...')  }}
                   </div>
                   <div class="emailUser">
-                      {{$client->email}}
+                      {{Str::limit($client->email, 20, '...')  }}
                   </div>
                   <div class="abonneType">
                       <ul>
@@ -126,334 +126,84 @@
                                   <path d="M9.66667 31.6667C9.66667 33.5 11.1667 35 13 35H26.3333C28.1667 35 29.6667 33.5 29.6667 31.6667V11.6667H9.66667V31.6667ZM31.3333 6.66667H25.5L23.8333 5H15.5L13.8333 6.66667H8V10H31.3333V6.66667Z" fill="white" fill-opacity="0.7"/>
                               </svg>
                             </button>
-  
+
                       </form>
-  
-  
+
+
                    </div>
                   </div>
-  
+
               </div>
               @endforeach
 
 
-              {{-- {{$links()}} --}}
-
-                {{-- @endforeach             --}}
-
-{{--            
-            <div class="cartUser">
-                <div class="userIcone">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <g clip-path="url(#clip0_189_63)">
-                          <path d="M12.5 14.0625C16.3818 14.0625 19.5312 10.9131 19.5312 7.03125C19.5312 3.14941 16.3818 0 12.5 0C8.61816 0 5.46875 3.14941 5.46875 7.03125C5.46875 10.9131 8.61816 14.0625 12.5 14.0625ZM18.75 15.625H16.0596C14.9756 16.123 13.7695 16.4062 12.5 16.4062C11.2305 16.4062 10.0293 16.123 8.94043 15.625H6.25C2.79785 15.625 0 18.4229 0 21.875V22.6562C0 23.9502 1.0498 25 2.34375 25H22.6562C23.9502 25 25 23.9502 25 22.6562V21.875C25 18.4229 22.2021 15.625 18.75 15.625Z" fill="white" fill-opacity="0.7"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_189_63">
-                            <rect width="25" height="25" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                </div>
-                <div class="nameUser">
-                     AYman benchalh
-                </div>
-                <div class="emailUser">
-                    aymanbenchalh@...
-                </div>
-                <div class="abonneType">
-                    <ul>
-                    <li>Abonne type :</li>
-                    <li>2 months</li>
-                      </ul>
-                </div>
-                <div class="partyUser">
-                    <div class="datacreate">
-                                    <ul>
-                                    <li>date create :</li>
-                                    <li>02/11/2024</li>
-                                    </ul>
-                                </div>
-                 <div class="deletUser">
-                    <form action="" method="post">
-                        <input type="hidden" name="IdUser" value="IdUser">
-                        <button type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <rect width="40" height="40" rx="9" fill="#030637"/>
-                                <path d="M9.66667 31.6667C9.66667 33.5 11.1667 35 13 35H26.3333C28.1667 35 29.6667 33.5 29.6667 31.6667V11.6667H9.66667V31.6667ZM31.3333 6.66667H25.5L23.8333 5H15.5L13.8333 6.66667H8V10H31.3333V6.66667Z" fill="white" fill-opacity="0.7"/>
-                            </svg>
-                          </button>
-
-                    </form>
 
 
-                 </div>
-                </div>
-
-            </div>
-            <div class="cartUser">
-                <div class="userIcone">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <g clip-path="url(#clip0_189_63)">
-                          <path d="M12.5 14.0625C16.3818 14.0625 19.5312 10.9131 19.5312 7.03125C19.5312 3.14941 16.3818 0 12.5 0C8.61816 0 5.46875 3.14941 5.46875 7.03125C5.46875 10.9131 8.61816 14.0625 12.5 14.0625ZM18.75 15.625H16.0596C14.9756 16.123 13.7695 16.4062 12.5 16.4062C11.2305 16.4062 10.0293 16.123 8.94043 15.625H6.25C2.79785 15.625 0 18.4229 0 21.875V22.6562C0 23.9502 1.0498 25 2.34375 25H22.6562C23.9502 25 25 23.9502 25 22.6562V21.875C25 18.4229 22.2021 15.625 18.75 15.625Z" fill="white" fill-opacity="0.7"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_189_63">
-                            <rect width="25" height="25" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                </div>
-                <div class="nameUser">
-                     AYman benchalh
-                </div>
-                <div class="emailUser">
-                    aymanbenchalh@...
-                </div>
-                <div class="abonneType">
-                    <ul>
-                    <li>Abonne type :</li>
-                    <li>2 months</li>
-                      </ul>
-                </div>
-                <div class="partyUser">
-                    <div class="datacreate">
-                                    <ul>
-                                    <li>date create :</li>
-                                    <li>02/11/2024</li>
-                                    </ul>
-                                </div>
-                 <div class="deletUser">
-                    <form action="" method="post">
-                        <input type="hidden" name="IdUser" value="IdUser">
-                        <button type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <rect width="40" height="40" rx="9" fill="#030637"/>
-                                <path d="M9.66667 31.6667C9.66667 33.5 11.1667 35 13 35H26.3333C28.1667 35 29.6667 33.5 29.6667 31.6667V11.6667H9.66667V31.6667ZM31.3333 6.66667H25.5L23.8333 5H15.5L13.8333 6.66667H8V10H31.3333V6.66667Z" fill="white" fill-opacity="0.7"/>
-                            </svg>
-                          </button>
-
-                    </form>
 
 
-                 </div>
-                </div>
 
-            </div>
-            <div class="cartUser">
-                <div class="userIcone">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <g clip-path="url(#clip0_189_63)">
-                          <path d="M12.5 14.0625C16.3818 14.0625 19.5312 10.9131 19.5312 7.03125C19.5312 3.14941 16.3818 0 12.5 0C8.61816 0 5.46875 3.14941 5.46875 7.03125C5.46875 10.9131 8.61816 14.0625 12.5 14.0625ZM18.75 15.625H16.0596C14.9756 16.123 13.7695 16.4062 12.5 16.4062C11.2305 16.4062 10.0293 16.123 8.94043 15.625H6.25C2.79785 15.625 0 18.4229 0 21.875V22.6562C0 23.9502 1.0498 25 2.34375 25H22.6562C23.9502 25 25 23.9502 25 22.6562V21.875C25 18.4229 22.2021 15.625 18.75 15.625Z" fill="white" fill-opacity="0.7"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_189_63">
-                            <rect width="25" height="25" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                </div>
-                <div class="nameUser">
-                     AYman benchalh
-                </div>
-                <div class="emailUser">
-                    aymanbenchalh@...
-                </div>
-                <div class="abonneType">
-                    <ul>
-                    <li>Abonne type :</li>
-                    <li>2 months</li>
-                      </ul>
-                </div>
-                <div class="partyUser">
-                    <div class="datacreate">
-                                    <ul>
-                                    <li>date create :</li>
-                                    <li>02/11/2024</li>
-                                    </ul>
-                                </div>
-                 <div class="deletUser">
-                    <form action="" method="post">
-                        <input type="hidden" name="IdUser" value="IdUser">
-                        <button type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <rect width="40" height="40" rx="9" fill="#030637"/>
-                                <path d="M9.66667 31.6667C9.66667 33.5 11.1667 35 13 35H26.3333C28.1667 35 29.6667 33.5 29.6667 31.6667V11.6667H9.66667V31.6667ZM31.3333 6.66667H25.5L23.8333 5H15.5L13.8333 6.66667H8V10H31.3333V6.66667Z" fill="white" fill-opacity="0.7"/>
-                            </svg>
-                          </button>
-
-                    </form>
-
-
-                 </div>
-                </div>
-
-            </div>
-            <div class="cartUser">
-                <div class="userIcone">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <g clip-path="url(#clip0_189_63)">
-                          <path d="M12.5 14.0625C16.3818 14.0625 19.5312 10.9131 19.5312 7.03125C19.5312 3.14941 16.3818 0 12.5 0C8.61816 0 5.46875 3.14941 5.46875 7.03125C5.46875 10.9131 8.61816 14.0625 12.5 14.0625ZM18.75 15.625H16.0596C14.9756 16.123 13.7695 16.4062 12.5 16.4062C11.2305 16.4062 10.0293 16.123 8.94043 15.625H6.25C2.79785 15.625 0 18.4229 0 21.875V22.6562C0 23.9502 1.0498 25 2.34375 25H22.6562C23.9502 25 25 23.9502 25 22.6562V21.875C25 18.4229 22.2021 15.625 18.75 15.625Z" fill="white" fill-opacity="0.7"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_189_63">
-                            <rect width="25" height="25" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                </div>
-                <div class="nameUser">
-                     AYman benchalh
-                </div>
-                <div class="emailUser">
-                    aymanbenchalh@...
-                </div>
-                <div class="abonneType">
-                    <ul>
-                    <li>Abonne type :</li>
-                    <li>2 months</li>
-                      </ul>
-                </div>
-                <div class="partyUser">
-                    <div class="datacreate">
-                                    <ul>
-                                    <li>date create :</li>
-                                    <li>02/11/2024</li>
-                                    </ul>
-                                </div>
-                 <div class="deletUser">
-                    <form action="" method="post">
-                        <input type="hidden" name="IdUser" value="IdUser">
-                        <button type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <rect width="40" height="40" rx="9" fill="#030637"/>
-                                <path d="M9.66667 31.6667C9.66667 33.5 11.1667 35 13 35H26.3333C28.1667 35 29.6667 33.5 29.6667 31.6667V11.6667H9.66667V31.6667ZM31.3333 6.66667H25.5L23.8333 5H15.5L13.8333 6.66667H8V10H31.3333V6.66667Z" fill="white" fill-opacity="0.7"/>
-                            </svg>
-                          </button>
-
-                    </form>
-
-
-                 </div>
-                </div>
-
-            </div>
-            <div class="cartUser">
-                <div class="userIcone">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                        <g clip-path="url(#clip0_189_63)">
-                          <path d="M12.5 14.0625C16.3818 14.0625 19.5312 10.9131 19.5312 7.03125C19.5312 3.14941 16.3818 0 12.5 0C8.61816 0 5.46875 3.14941 5.46875 7.03125C5.46875 10.9131 8.61816 14.0625 12.5 14.0625ZM18.75 15.625H16.0596C14.9756 16.123 13.7695 16.4062 12.5 16.4062C11.2305 16.4062 10.0293 16.123 8.94043 15.625H6.25C2.79785 15.625 0 18.4229 0 21.875V22.6562C0 23.9502 1.0498 25 2.34375 25H22.6562C23.9502 25 25 23.9502 25 22.6562V21.875C25 18.4229 22.2021 15.625 18.75 15.625Z" fill="white" fill-opacity="0.7"/>
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_189_63">
-                            <rect width="25" height="25" fill="white"/>
-                          </clipPath>
-                        </defs>
-                      </svg>
-                </div>
-                <div class="nameUser">
-                     AYman benchalh
-                </div>
-                <div class="emailUser">
-                    aymanbenchalh@...
-                </div>
-                <div class="abonneType">
-                    <ul>
-                    <li>Abonne type :</li>
-                    <li>2 months</li>
-                      </ul>
-                </div>
-                <div class="partyUser">
-                    <div class="datacreate">
-                                    <ul>
-                                    <li>date create :</li>
-                                    <li>02/11/2024</li>
-                                    </ul>
-                                </div>
-                 <div class="deletUser">
-                    <form action="" method="post">
-                        <input type="hidden" name="IdUser" value="IdUser">
-                        <button type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <rect width="40" height="40" rx="9" fill="#030637"/>
-                                <path d="M9.66667 31.6667C9.66667 33.5 11.1667 35 13 35H26.3333C28.1667 35 29.6667 33.5 29.6667 31.6667V11.6667H9.66667V31.6667ZM31.3333 6.66667H25.5L23.8333 5H15.5L13.8333 6.66667H8V10H31.3333V6.66667Z" fill="white" fill-opacity="0.7"/>
-                            </svg>
-                          </button>
-
-                    </form>
-
-
-                 </div>
-                </div>
-
-            </div> 
-
-        </div>--}}
-        <div class="editeUser">
-            <div class="Useredite">
-                <ul>
-                    <li> <div class="testUsername">User  name</div></li>
-                    <li>
-                        <select name="" id="">
-                                <option >name user</option>
-                                <option >Ayman benchalh</option>
-                                <option >mohamed khalid</option>
-                        </select>
-                </li>
-                </ul>
-            </div>
-            <div class="typeabonne">
-                <ul>
-                    <li><div class="testAbonne"> type Abonne</div>
-                       </li>
-                    <li>
-                        <select name="" >
-                        <option >type abonne</option>
-                        <option >1 month</option>
-                        <option >2 months</option>
-                        </select>
+    </div>
+    <div class="editeUser">
+        <div class="Useredite">
+            <ul>
+                <li> <div class="testUsername">User  name</div></li>
+                <li>
+                    <select name="" id="">
+                            <option >name user</option>
+                            <option >Ayman benchalh</option>
+                            <option >mohamed khalid</option>
+                    </select>
             </li>
-                </ul>
-            </div>
-            <div class="btnedite">
-                <ul>
-                    <li><div class="testbtn">Edite Abonne</div> </li>
-                    <li>
-                        <form action="" method="post">@csrf<button class="btndelete" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
-                                <g clip-path="url(#clip0_190_159)">
-                                  <path d="M8 23.75C8 25.125 9.125 26.25 10.5 26.25H20.5C21.875 26.25 23 25.125 23 23.75V8.75H8V23.75ZM24.25 5H19.875L18.625 3.75H12.375L11.125 5H6.75V7.5H24.25V5Z" fill="white" fill-opacity="0.7"/>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_190_159">
-                                    <rect width="30" height="30" fill="white" transform="translate(0.5)"/>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                            Delete User
-                            </button>
-                        </form>
-                        <form action="" method="postt">@csrf @method('put')<button class="btnedite" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
-                                <g clip-path="url(#clip0_190_150)">
-                                  <path d="M4.25 21.5625V26.25H8.9375L22.7625 12.425L18.075 7.73745L4.25 21.5625ZM26.3875 8.79995C26.875 8.31245 26.875 7.52495 26.3875 7.03745L23.4625 4.11245C22.975 3.62495 22.1875 3.62495 21.7 4.11245L19.4125 6.39995L24.1 11.0875L26.3875 8.79995Z" fill="white" fill-opacity="0.7"/>
-                                </g>
-                                <defs>
-                                  <clipPath id="clip0_190_150">
-                                    <rect width="30" height="30" fill="white" transform="translate(0.5)"/>
-                                  </clipPath>
-                                </defs>
-                              </svg>
-                            Modife Abonne
+            </ul>
+        </div>
+        <div class="typeabonne">
+            <ul>
+                <li><div class="testAbonne"> type Abonne</div>
+                   </li>
+                <li>
+                    <select name="" >
+                    <option >type abonne</option>
+                    <option >1 month</option>
+                    <option >2 months</option>
+                    </select>
+        </li>
+            </ul>
+        </div>
+        <div class="btnedite">
+            <ul>
+                <li><div class="testbtn">Edite Abonne</div> </li>
+                <li>
+                    <form action="" method="post">@csrf<button class="btndelete" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                            <g clip-path="url(#clip0_190_159)">
+                              <path d="M8 23.75C8 25.125 9.125 26.25 10.5 26.25H20.5C21.875 26.25 23 25.125 23 23.75V8.75H8V23.75ZM24.25 5H19.875L18.625 3.75H12.375L11.125 5H6.75V7.5H24.25V5Z" fill="white" fill-opacity="0.7"/>
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_190_159">
+                                <rect width="30" height="30" fill="white" transform="translate(0.5)"/>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        Delete User
                         </button>
                     </form>
-                    </li>
-                </ul>
-            </div>
+                    <form action="" method="postt">@csrf @method('put')<button class="btnedite" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                            <g clip-path="url(#clip0_190_150)">
+                              <path d="M4.25 21.5625V26.25H8.9375L22.7625 12.425L18.075 7.73745L4.25 21.5625ZM26.3875 8.79995C26.875 8.31245 26.875 7.52495 26.3875 7.03745L23.4625 4.11245C22.975 3.62495 22.1875 3.62495 21.7 4.11245L19.4125 6.39995L24.1 11.0875L26.3875 8.79995Z" fill="white" fill-opacity="0.7"/>
+                            </g>
+                            <defs>
+                              <clipPath id="clip0_190_150">
+                                <rect width="30" height="30" fill="white" transform="translate(0.5)"/>
+                              </clipPath>
+                            </defs>
+                          </svg>
+                        Modife Abonne
+                    </button>
+                </form>
+                </li>
+            </ul>
         </div>
-
-
-
     </div>
   </div>
 </div>
