@@ -48,18 +48,19 @@
             </div>
            </div>
            <div class="insertFrom">
-            <form action="" method="post">
-                <input type="text" name="" placeholder="name">
-                <input type="text" name="" placeholder="sauvegarder">
-                <input type="number" name="" placeholder="prix">
-                <input type="text" name="" placeholder="desingantion 1">
-                <input type="text" name="" placeholder="desingantion 2">
-                <input type="text" name="" placeholder="desingantion 3">
-                <input type="text" name="" placeholder="desingantion 4">
-                <input type="text" name="" placeholder="desingantion 5">
-                <input type="text" name="" placeholder="desingantion 6">
+            <form action="{{route('store_product')}}" method="post">
+                @csrf
+                <input type="text" name="nom" placeholder="name">
+                <input type="text" name="sauvegarder" placeholder="sauvegarder">
+                <input type="number" name="prix" placeholder="prix">
+                <input type="text" name="desination1" placeholder="desingantion 1">
+                <input type="text" name="desination2" placeholder="desingantion 2">
+                <input type="text" name="desination3" placeholder="desingantion 3">
+                <input type="text" name="desination4" placeholder="desingantion 4">
+                <input type="text" name="desination5" placeholder="desingantion 5">
+                <input type="text" name="desination6" placeholder="desingantion 6">
 
-                <button type="submit" hidden id="btnSubmt"></button>
+                <button type="submit"  hidden id="btnSubmt"></button>
             </form>
            </div>
 

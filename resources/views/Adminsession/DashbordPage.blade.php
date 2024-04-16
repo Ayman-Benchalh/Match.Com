@@ -16,7 +16,7 @@
   </div>
   <div class="contentdash">
     <div class="part1">
-        <div class="titleParty">Admin controller </div>
+        <div class="titleParty">{{$Admin->firstName." ".$Admin->lastName}}</div>
         <div class="list">
             <ul>
                 <li id="focuseBnt"><a href="{{ route('indexpage') }}">Home</a></li>
@@ -27,7 +27,7 @@
             </ul>
         </div>
         <div class="btnlogout">
-            <a href="#">LOG OUT</a>
+            <a href="{{url('/')}}">LOG OUT</a>
         </div>
     </div>
     <div class="part2">
@@ -35,18 +35,18 @@
         <div class="groupCart">
             <div class="cart">
                 <div class="numberandicon">
-                    10
+                    {{$users}}
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
                             <path d="M40 45C52.4219 45 62.5 34.9219 62.5 22.5C62.5 10.0781 52.4219 0 40 0C27.5781 0 17.5 10.0781 17.5 22.5C17.5 34.9219 27.5781 45 40 45ZM60 50H51.3906C47.9219 51.5938 44.0625 52.5 40 52.5C35.9375 52.5 32.0938 51.5938 28.6094 50H20C8.95312 50 0 58.9531 0 70V72.5C0 76.6406 3.35938 80 7.5 80H72.5C76.6406 80 80 76.6406 80 72.5V70C80 58.9531 71.0469 50 60 50Z" fill="white" fill-opacity="0.8"/>
                           </svg>
                     </span>
                 </div>
-                <div class="titelcart">Num Totel User</div>
+                <div class="titelcart">Number Users</div>
             </div>
             <div class="cart">
                 <div class="numberandicon">
-                    25
+                    {{$commands}}
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
                             <g clip-path="url(#clip0_188_46)">
@@ -60,11 +60,11 @@
                           </svg>
                     </span>
                 </div>
-                <div class="titelcart">Num Totel User</div>
+                <div class="titelcart">Number Commands</div>
             </div>
             <div class="cart">
                 <div class="numberandicon">
-                    12
+                    {{$collections}}
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" fill="none">
                             <g clip-path="url(#clip0_188_50)">
@@ -78,7 +78,7 @@
                           </svg>
                     </span>
                 </div>
-                <div class="titelcart">Num Totel User</div>
+                <div class="titelcart">Number Collections</div>
             </div>
 
         </div>
@@ -96,18 +96,18 @@
 
             </div>
             <div class="collec">
-                <div class="titleColl">1 month</div>
+                <div class="titleColl">2 month</div>
                 <div class="partycoll1">
                     <div class="PriColl">12 &dollar;</div>
-                    <div class="qultyColl">save 10%</div>
+                    <div class="qultyColl">save 15%</div>
                 </div>
 
             </div>
             <div class="collec">
-                <div class="titleColl">1 month</div>
+                <div class="titleColl">3 month</div>
                 <div class="partycoll1">
-                    <div class="PriColl">26 &dollar;</div>
-                    <div class="qultyColl">save 10%</div>
+                    <div class="PriColl">19&dollar;</div>
+                    <div class="qultyColl">save 15%</div>
                 </div>
 
             </div>

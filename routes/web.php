@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 namespace App\Http\Controllers\GlobalController;
 namespace App\Http\Controllers\Forgetpasswordreset;
 namespace App\Http\Middleware\Auth;
+namespace App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
@@ -57,7 +58,13 @@ Route::post("/resetPassworduser",[Forgetpasswordreset::class,'resetPassworduser'
 
 Route::get('/DashbordAdmin',[AdminController::class,'index'])->name('indexpage');
 Route::get('/Addcollection',[AdminController::class,'Add_collection'])->name('Add_collection');
+
+Route::post('/store_product', [AdminController::class, 'store'])->name('store_product');
+
+Route::delete('/deleteUser/{idUser}',[AdminController::class,'deleteUser'])->name('DeleteUser');
+
 Route::get('/Userdashbord',[AdminController::class,'User_dashbord'])->name('User_dashbord');
 Route::get('/Deliverydashbord',[AdminController::class,'Delivery_dashbord'])->name('Delivery_dashbord');
 Route::get('/Configration',[AdminController::class,'Configration'])->name('Configration');
 Route::get('/AdminBoitemessage',[AdminController::class,'Admin_Boite_message'])->name('Admin_Boite_message');
+// Route::get('/logOut',[GlobalController::class,'logOut'])->middleware(['auth'
