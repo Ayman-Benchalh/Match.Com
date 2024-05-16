@@ -40,7 +40,7 @@ Route::post('/Create_Acount',[GlobalController::class,'insertAccount'])->name("i
     // Route::middleware(['auth:user'])->group(function () {
         // ...
 // Route::middleware('auth:user')->group(function () {
-    
+
 
 Route::get('/AllCollection/{idUser}',[GlobalController::class,'AllCollection'])->name("AllCollection");
 Route::get('/viewOneProduct/{idUser}/OneCollection/{idProduct}',[GlobalController::class,'viewOneProduct'])->name("viewOne_Product");
@@ -57,7 +57,7 @@ Route::get("/boitMessage/{idUser}",[GlobalController::class,'boitMessage'])->nam
 Route::post("/sendmessg/User/{idUser}/sendToAdmin/{idAdmin}",[GlobalController::class,'sendmessg'])->name('sendmessg');
 
 
-// }); 
+// });
 // });
 
 Route::get("/forgetPassword",[Forgetpasswordreset::class,'forgetPassword'])->name('forgetPassword');
@@ -92,7 +92,7 @@ Route::get('/AdminLogin',[AdminController::class,'login_Admin_page'])->name('Adm
 Route::post('/AdminLogin',[AdminController::class,'login_Admin'])->name('AdminLogin');
 
 Route::middleware('auth:admin')->group(function () {
-    
+
 Route::get('/DashbordAdmin',[AdminController::class,'index'])->name('indexpage');
 Route::get('/Addcollection',[AdminController::class,'Add_collection'])->name('Add_collection');
 
@@ -111,8 +111,8 @@ Route::put('/Configration/{idAdmin}',[AdminController::class,'UpdateConfiguratio
 Route::get('/AdminBoitemessage/{idUser?}/',[AdminController::class,'Admin_Boite_message'])->name('Admin_Boite_message');
 Route::delete('/AdminLogout',[AdminController::class,'logout_admin'])->name('logOutAdmin');
 });
-// Route::fallback(function(){
-//     return view('pagenotfound');
-// });
+Route::fallback(function(){
+    return view('pagenotfound');
+});
 
 // Route::get('/logOut',[GlobalController::class,'logOut'])->middleware(['auth'
