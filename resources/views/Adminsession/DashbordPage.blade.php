@@ -29,15 +29,15 @@
             </ul>
         </div>
         <div class="btnlogout">
-            <form style="margin-left: 60px" action="{{route('logOutAdmin')}}" method="POST">
+            <form action="{{route('logOutAdmin')}}" method="POST">
                 @csrf
                 @method('DELETE')
-            <button> <a>LOG OUT</a></button>
+            <button> LOG OUT</button>
         </form>
         </div>
     </div>
     <div class="part2">
-        <div class="titleparty2">Home Dashbord <span style="margin-left: 200px">Welcome : {{$adminDa->firstName." ".$adminDa->lastName}}</span></div>
+        <div class="titleparty2">Home Dashbord <span class="nameAdmin">Welcome : {{$adminDa->firstName." ".$adminDa->lastName}}</span></div>
         <div class="groupCart">
             <div class="cart">
                 <div class="numberandicon">

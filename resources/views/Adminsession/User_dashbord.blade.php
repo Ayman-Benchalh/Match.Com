@@ -27,23 +27,17 @@
             </ul>
         </div>
         <div class="btnlogout">
-          <form style="margin-left: 60px" action="{{route('logOutAdmin')}}" method="POST">
+          <form action="{{route('logOutAdmin')}}" method="POST">
             @csrf
             @method('DELETE')
-        <button> <a>LOG OUT</a></button>
+        <button>LOG OUT</button>
     </form>
         </div>
     </div>
     <div class="part2">
 
-        <div class="titleparty2">User dashbord</div>
-        @if(session('success'))
-     <div style="margin-top: 75px" class="messageSec">{{session('success')}} <div class="close" onclick="reloadthispage()"><i class="fa-solid fa-xmark"></i></div></div>
- @endif
-
-
-        <div class="showUser">
-                <div class="totalUser">
+        <div class="titleparty2">User dashbord
+            <div class="totalUser">
                         <span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
                             <g clip-path="url(#clip0_190_142)">
@@ -57,8 +51,15 @@
                         </svg>
                         </span>
                         {{$userCount}} users
-                </div>
-                
+                </div></div>
+        @if(session('success'))
+     <div style="margin-top: 75px" class="messageSec">{{session('success')}} <div class="close" onclick="reloadthispage()"><i class="fa-solid fa-xmark"></i></div></div>
+ @endif
+
+
+        <div class="showUser">
+
+
                 {{-- <div class="deteleAlluser">
                     <form action="" method="post">
 
@@ -218,7 +219,7 @@
 <script>
   const reloadthispage=()=>{
     location.reload();
-    
+
     }
 </script>
 @endsection

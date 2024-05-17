@@ -29,20 +29,20 @@
         </div>
         <div class="btnlogout">
             {{-- <a href="{{route('logOutAdmin')}}">LOG OUT</a> --}}
-            <form style="margin-left: 60px" action="{{route('logOutAdmin')}}" method="POST">
+            <form  action="{{route('logOutAdmin')}}" method="POST">
                 @csrf
                 @method('DELETE')
-            <button> <a>LOG OUT</a></button>
+            <button>LOG OUT</button>
         </form>
         </div>
     </div>
     <div class="part2">
-        <div class="titleparty2">Add collection <span style="margin-left: 300px">Collections (products) : {{$count}} </span>
-                  
+        <div class="titleparty2">Add collection <span class="nameAdmin">Collections ( products ) : {{$count}} </span>
+
                 @if(session('success'))
                          <div style="margin-top: 75px" class="messageSec">{{session('success')}} <div class="close" onclick="reloadthispage()"><i class="fa-solid fa-xmark"></i></div></div>
                  @endif
-            
+
         </div>
         <div class="AddColl">
         <div class="titColl">
@@ -110,7 +110,7 @@
 <script>
     const reloadthispage=()=>{
       location.reload();
-      
+
       }
   </script>
 @endsection

@@ -28,110 +28,85 @@
         </div>
         <div class="btnlogout">
             {{-- <a href="{{route('logOutAdmin')}}">LOG OUT</a> --}}
-            <form style="margin-left: 60px" action="{{route('logOutAdmin')}}" method="POST">
+            <form  action="{{route('logOutAdmin')}}" method="POST">
                 @csrf
                 @method('DELETE')
-            <button> <a>LOG OUT</a></button>
+            <button> LOG OUT</button>
         </form>
         </div>
     </div>
     <div class="part2">
-        <div class="titleparty2"> 
+        <div class="titleparty2">
           <span> @if($UserSelected)
-             User : {{$UserSelected->firstName.' '.$UserSelected->lastName.' ---> id : '.$UserSelected->idUser}} 
+             User : {{$UserSelected->firstName.' '.$UserSelected->lastName.'  id : '.$UserSelected->idUser}}
              {{-- <span style="margin-left:200px;">Command ID : {{$mesCom->idcommand}} </span> --}}
             @endif
             @if (!$UserSelected)
               {{-- Historique des messages : --}}
             @endif
-          </span></div>      
+          </span></div>
         <div class="AdminBoitemessage">
             <div class="selectUser">
                 <form>
                     <select name="selectClient" id="selectClient" onchange="javascriptfn()">
-                        <option  value="">-------------------------------> Select User <--------------------------</option>
+                        <option  value="">Select User</option>
                         @foreach ( $allUsers as $user)
-                          <option  value="{{$user->idUser}}"> {{' id : '.$user->idUser.' | '.$user->firstName.' '.$user->lastName}}</option>
+                          <option  value="{{$user->idUser}}"> {{' Id : '.$user->idUser.'  |  '.$user->firstName.'  ' .$user->lastName}}</option>
                         @endforeach
-                      
+
                     </select>
                     <a id="changedBtn" href="/AdminBoitemessage"></a>
                 </form >
             </div>
             <div class="sectionMessage">
                 <div class="contentMessage">
-                    <div class="itmmessage">
+
                       @if(!$UserSelected)
+
                       @else
                       @foreach ($allmessage as $onemessage)
 
-                      @if($onemessage->messageAdmin)
-                        <div class="Adminitmmessaage">
-                            <div class="profilAdmin">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="38" viewBox="0 0 35 38" fill="none">
-                                    <path d="M17.3235 21.2316C22.7033 21.2316 27.068 16.4766 27.068 10.6158C27.068 4.755 22.7033 0 17.3235 0C11.9438 0 7.57904 4.755 7.57904 10.6158C7.57904 16.4766 11.9438 21.2316 17.3235 21.2316ZM25.9853 23.5907H22.2567C20.7544 24.3426 19.083 24.7702 17.3235 24.7702C15.5641 24.7702 13.8994 24.3426 12.3904 23.5907H8.66177C3.87749 23.5907 0 27.8149 0 33.027V34.2065C0 36.1601 1.45491 37.7451 3.24816 37.7451H31.3989C33.1922 37.7451 34.6471 36.1601 34.6471 34.2065V33.027C34.6471 27.8149 30.7696 23.5907 25.9853 23.5907Z" fill="white" fill-opacity="0.8"/>
-                                </svg>
-                            </div>
-                            <div class="messageAdmin">
-                                {{$onemessage->messageAdmin}}
-                                <div class="datamessageAdmin">{{$onemessage->dateMessageAdmin}}</div>
-                            </div>
+                        @if($onemessage->messageAdmin)
+                            <div class="itmmessage">
+                                <div class="Adminitmmessaage">
+                                    <div class="profilAdmin">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="38" viewBox="0 0 35 38" fill="none">
+                                            <path d="M17.3235 21.2316C22.7033 21.2316 27.068 16.4766 27.068 10.6158C27.068 4.755 22.7033 0 17.3235 0C11.9438 0 7.57904 4.755 7.57904 10.6158C7.57904 16.4766 11.9438 21.2316 17.3235 21.2316ZM25.9853 23.5907H22.2567C20.7544 24.3426 19.083 24.7702 17.3235 24.7702C15.5641 24.7702 13.8994 24.3426 12.3904 23.5907H8.66177C3.87749 23.5907 0 27.8149 0 33.027V34.2065C0 36.1601 1.45491 37.7451 3.24816 37.7451H31.3989C33.1922 37.7451 34.6471 36.1601 34.6471 34.2065V33.027C34.6471 27.8149 30.7696 23.5907 25.9853 23.5907Z" fill="white" fill-opacity="0.8"/>
+                                        </svg>
+                                    </div>
+                                    <div class="messageAdmin">
+                                        {{$onemessage->messageAdmin}}
+                                        <div class="datamessageAdmin">{{$onemessage->dateMessageAdmin}}</div>
+                                    </div>
 
-                        </div>
-                        @elseif ($onemessage->messageUser)
-                        <div class="Useritmmessaage">
-                            <div class="profilUser">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="38" viewBox="0 0 35 38" fill="none">
-                                    <path d="M17.3235 21.2316C22.7033 21.2316 27.068 16.4766 27.068 10.6158C27.068 4.755 22.7033 0 17.3235 0C11.9438 0 7.57904 4.755 7.57904 10.6158C7.57904 16.4766 11.9438 21.2316 17.3235 21.2316ZM25.9853 23.5907H22.2567C20.7544 24.3426 19.083 24.7702 17.3235 24.7702C15.5641 24.7702 13.8994 24.3426 12.3904 23.5907H8.66177C3.87749 23.5907 0 27.8149 0 33.027V34.2065C0 36.1601 1.45491 37.7451 3.24816 37.7451H31.3989C33.1922 37.7451 34.6471 36.1601 34.6471 34.2065V33.027C34.6471 27.8149 30.7696 23.5907 25.9853 23.5907Z" fill="white" fill-opacity="0.8"/>
-                                </svg>
-                        </div>
-                        <div class="messageUser">
-                           {{$onemessage->messageUser}}
-                            <div class="datamessageUser">{{$onemessage->dateMessageUser}}</div>
-                        </div>
-
+                                </div>
                             </div>
+                            @elseif ($onemessage->messageUser)
+                            <div class="itmmessage">
+                                <div class="Useritmmessaage">
+                                        <div class="profilUser">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="38" viewBox="0 0 35 38" fill="none">
+                                                <path d="M17.3235 21.2316C22.7033 21.2316 27.068 16.4766 27.068 10.6158C27.068 4.755 22.7033 0 17.3235 0C11.9438 0 7.57904 4.755 7.57904 10.6158C7.57904 16.4766 11.9438 21.2316 17.3235 21.2316ZM25.9853 23.5907H22.2567C20.7544 24.3426 19.083 24.7702 17.3235 24.7702C15.5641 24.7702 13.8994 24.3426 12.3904 23.5907H8.66177C3.87749 23.5907 0 27.8149 0 33.027V34.2065C0 36.1601 1.45491 37.7451 3.24816 37.7451H31.3989C33.1922 37.7451 34.6471 36.1601 34.6471 34.2065V33.027C34.6471 27.8149 30.7696 23.5907 25.9853 23.5907Z" fill="white" fill-opacity="0.8"/>
+                                            </svg>
+                                    </div>
+                                    <div class="messageUser">
+                                        {{$onemessage->messageUser}}
+                                        <div class="datamessageUser">{{$onemessage->dateMessageUser}}</div>
+                                    </div>
+
+                                </div>
+                                </div>
 
                       @endif
-                        
+                    {{-- </div> --}}
                       @endforeach
                       @endif
-                    </div>
-                    <div class="itmmessage">
-                         {{-- <div class="Useritmmessaage">
-                            <div class="profilUser">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="38" viewBox="0 0 35 38" fill="none">
-                                    <path d="M17.3235 21.2316C22.7033 21.2316 27.068 16.4766 27.068 10.6158C27.068 4.755 22.7033 0 17.3235 0C11.9438 0 7.57904 4.755 7.57904 10.6158C7.57904 16.4766 11.9438 21.2316 17.3235 21.2316ZM25.9853 23.5907H22.2567C20.7544 24.3426 19.083 24.7702 17.3235 24.7702C15.5641 24.7702 13.8994 24.3426 12.3904 23.5907H8.66177C3.87749 23.5907 0 27.8149 0 33.027V34.2065C0 36.1601 1.45491 37.7451 3.24816 37.7451H31.3989C33.1922 37.7451 34.6471 36.1601 34.6471 34.2065V33.027C34.6471 27.8149 30.7696 23.5907 25.9853 23.5907Z" fill="white" fill-opacity="0.8"/>
-                                </svg>
-                        </div>
-                        <div class="messageUser">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis voluptatibus recusandae
-                            sapiente quas repudiandae? Alias, quidem aut? Illum dolores corrupti nam sit commodi cupiditate.
-                             Distinctio numquam omnis tempore provident repellat?
-                            <div class="datamessageUser">04/8/2024</div>
-                        </div>
 
-                            </div> --}}
-                    </div>
 
-                    <div class="itmmessage">
-                        {{-- <div class="Adminitmmessaage">
-                                <div class="profilAdmin">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="38" viewBox="0 0 35 38" fill="none">
-                                        <path d="M17.3235 21.2316C22.7033 21.2316 27.068 16.4766 27.068 10.6158C27.068 4.755 22.7033 0 17.3235 0C11.9438 0 7.57904 4.755 7.57904 10.6158C7.57904 16.4766 11.9438 21.2316 17.3235 21.2316ZM25.9853 23.5907H22.2567C20.7544 24.3426 19.083 24.7702 17.3235 24.7702C15.5641 24.7702 13.8994 24.3426 12.3904 23.5907H8.66177C3.87749 23.5907 0 27.8149 0 33.027V34.2065C0 36.1601 1.45491 37.7451 3.24816 37.7451H31.3989C33.1922 37.7451 34.6471 36.1601 34.6471 34.2065V33.027C34.6471 27.8149 30.7696 23.5907 25.9853 23.5907Z" fill="white" fill-opacity="0.8"/>
-                                        </svg>
-                                </div>
-                                <div class="messageAdmin">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis voluptatibus recusandae
-                                    sapiente quas repudiandae? Alias, quidem aut? Illum dolores corrupti nam sit commodi cupiditate.
-                                        Distinctio numquam omnis tempore provident repellat?
-                                    <div class="datamessageAdmin">04/8/2024</div>
-                                </div>
 
-                        </div> --}}
-                   </div>
-                   <div class="itmmessage">
-                            {{-- <div class="Useritmmessaage">
+
+                  {{-- <div class="itmmessage">
+                             <div class="Useritmmessaage">
                                     <div class="profilUser">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="38" viewBox="0 0 35 38" fill="none">
                                             <path d="M17.3235 21.2316C22.7033 21.2316 27.068 16.4766 27.068 10.6158C27.068 4.755 22.7033 0 17.3235 0C11.9438 0 7.57904 4.755 7.57904 10.6158C7.57904 16.4766 11.9438 21.2316 17.3235 21.2316ZM25.9853 23.5907H22.2567C20.7544 24.3426 19.083 24.7702 17.3235 24.7702C15.5641 24.7702 13.8994 24.3426 12.3904 23.5907H8.66177C3.87749 23.5907 0 27.8149 0 33.027V34.2065C0 36.1601 1.45491 37.7451 3.24816 37.7451H31.3989C33.1922 37.7451 34.6471 36.1601 34.6471 34.2065V33.027C34.6471 27.8149 30.7696 23.5907 25.9853 23.5907Z" fill="white" fill-opacity="0.8"/>
@@ -144,10 +119,9 @@
                                         <div class="datamessageUser">04/8/2024</div>
                                     </div>
 
-                            </div> --}}
-                </div>
-
-                    <div class="itmmessage">
+                            </div>
+                </div>--}}
+                {{-- <div class="itmmessage">
                         {{-- <div class="Adminitmmessaage">
                                 <div class="profilAdmin">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="38" viewBox="0 0 35 38" fill="none">
@@ -161,8 +135,8 @@
                                     <div class="datamessageAdmin">04/8/2024</div>
                                 </div>
 
-                        </div> --}}
-                 </div>
+                        </div>
+                 </div> --}}
             </div>
             <div class="newMessage">
                     <div class="profilAdmin">
@@ -178,9 +152,9 @@
                           </svg>
                     </div>
                     <div class="barmessage">
-                      
-                      
-                      
+
+
+
                       @if (!$UserSelected)
                       @else
                         <form action="/sendMessageAdmin/{{$onemessage->idUser}}" method="post">
@@ -395,13 +369,13 @@
     const url="AdminBoitemessage";
     const selectedClientId = selectClient.value;
     if (selectedClientId) {
-      
+
       changedBtn.href = `/${url}/${selectedClientId}`;
     } else {
-      
+
       changedBtn.href = `/${url}`;
     }
-    
+
     return changedBtn.click();
   }
 </script>

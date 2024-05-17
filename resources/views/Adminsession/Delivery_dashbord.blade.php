@@ -28,21 +28,19 @@
         </div>
         <div class="btnlogout">
             {{-- <a href="{{route('logOutAdmin')}}">LOG OUT</a> --}}
-            <form style="margin-left: 60px" action="{{route('logOutAdmin')}}" method="POST">
+            <form  action="{{route('logOutAdmin')}}" method="POST">
                 @csrf
                 @method('DELETE')
-            <button> <a>LOG OUT</a></button>
+            <button> LOG OUT</button>
         </form>
         </div>
     </div>
     <div class="part2">
         <div class="titleparty2">Delivery dashbord
             @if(session('success'))
-            <div style="margin-top: 75px" class="messageSec">{{session('success')}} <div class="close" onclick="reloadthispage()"><i class="fa-solid fa-xmark"></i></div></div>
+            <div  class="messageSec">{{session('success')}} <div class="close" onclick="reloadthispage()"><i class="fa-solid fa-xmark"></i></div></div>
         @endif
-        </div>
-        <div class="deliveryContent">
-            <div class="allCommed">
+        <div class="allCommed">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                         <path d="M15 27.5C16.375 27.5 17.5 26.375 17.5 25H12.5C12.5 26.375 13.6125 27.5 15 27.5ZM22.5 20V13.75C22.5 9.9125 20.45 6.7 16.875 5.85V5C16.875 3.9625 16.0375 3.125 15 3.125C13.9625 3.125 13.125 3.9625 13.125 5V5.85C9.5375 6.7 7.5 9.9 7.5 13.75V20L5 22.5V23.75H25V22.5L22.5 20Z" fill="white" fill-opacity="0.7"/>
@@ -52,8 +50,11 @@
 
             </div>
             <div class="datatoday">date d'aujourd'hui : {{$todaydate}}</div>
+        </div>
+        <div class="deliveryContent">
+
             @foreach ($Commands as $command )
-                <div class="devlivItem">
+            <div class="devlivItem">
                 <div class="idcommd">
                     <ul>
                         <li  class="textCommd">Id Command : </li>
@@ -62,51 +63,65 @@
                 </div>
                 <div class="prixtotal">
                     <ul>
-                    <li  class="textprix">Id User : </li>
-                    <li>{{$command->idUser}}</li>
-                </ul></div>
+                        <li  class="textprix">Id User : </li>
+                        <li>{{$command->idUser}}</li>
+                    </ul>
+                </div>
                 <div class="typeabonne">
-                <ul>
-                    <li  class="textabonne">Statut :</li>
-                    <li>{{$command->statut}}</li>
-                </ul>
+                    <ul>
+                        <li  class="textabonne">Statut :</li>
+                        <li>{{$command->statut}}</li>
+                    </ul>
                 </div>
                 <div class="dataCommd">
                     <ul>
-                    <li  class="textDate ">Date cmd :</li>
-                    <li>{{$command->datecommand}}</li>
-                </ul></div>
-                <div class="btnDelivery"> <a href="AdminBoitemessage/{{$command->idUser}}">Delivery Commandd</a></div>
+                        <li  class="textDate ">Date cmd :</li>
+                        <li>{{$command->datecommand}}</li>
+                    </ul>
+                </div>
+                <div class="allbtn">
+                        <div class="deletUser">
+                            <form action="{{route('deleteCommand',['idCommand'=>$command->idcommand])}}" onsubmit="return confirm('ARE YOU SURE')" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="IdUser" value="">
+                                <button type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
+
+                                    <rect width="50" height="50" rx="9" fill="#B70909"/>
+                                    <path d="M14.6667 36.6667C14.6667 38.5 16.1667 40 18 40H31.3333C33.1667 40 34.6667 38.5 34.6667 36.6667V16.6667H14.6667V36.6667ZM36.3333 11.6667H30.5L28.8333 10H20.5L18.8333 11.6667H13V15H36.3333V11.6667Z" fill="white" fill-opacity="0.8"/>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
 
 
+                        <div class="btnDelivery"><a href="AdminBoitemessage/{{$command->idUser}}">Delivery Commandd</a></div>
+                            <!-- if not check click -->
+                        <div class="btncheck">
+                            <a href="#"><i class="fa-solid fa-check"></i></a>
 
-                <div class="deletUser">
-                    <form action="{{route('deleteCommand',['idCommand'=>$command->idcommand])}}" onsubmit="return confirm('ARE YOU SURE')" method="post">
-                      @csrf
-                      @method('DELETE')
-                        <input type="hidden" name="IdUser" value="">
-                        <button type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <rect width="40" height="40" rx="9" fill="#030637"/>
-                                <path d="M9.66667 31.6667C9.66667 33.5 11.1667 35 13 35H26.3333C28.1667 35 29.6667 33.5 29.6667 31.6667V11.6667H9.66667V31.6667ZM31.3333 6.66667H25.5L23.8333 5H15.5L13.8333 6.66667H8V10H31.3333V6.66667Z" fill="white" fill-opacity="0.7"/>
-                            </svg>
-                          </button>
+                        </div>
+                           <!-- if  check -->
+                        {{-- <div class="btncheck" style="background: #84FF65">
 
-                    </form>
-
-
-                 </div>
-
+                            <a href="#" ><i class="fa-solid fa-check-double"></i></a>
+                        </div> --}}
+                </div>
             </div>
-            @endforeach
-        </div>
-    </div>
-  </div>
-</div>
+             @endforeach
+            </div>
+            </div>
+
+
+                        </div>
+                    </div>
+
+
 <script>
     const reloadthispage=()=>{
       location.reload();
-      
+
       }
   </script>
 @endsection

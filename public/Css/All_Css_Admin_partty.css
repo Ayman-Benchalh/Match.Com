@@ -151,11 +151,13 @@ align-items: center;
     width: 100%;
 
     display: flex;
-
+justify-content: center;
+align-items: center;
     position: absolute;
     bottom: 10px;
+    background-color: #2ac00400;
 }
-.contentdash .part1 .btnlogout a{
+.contentdash .part1 .btnlogout form button{
     width: 174px;
     height: 54px;
     flex-shrink: 0;
@@ -174,10 +176,11 @@ align-items: center;
 text-decoration: none;
 margin: auto;
 transition: all .5s ease;
+border: none;
 
 
 }
-.contentdash .part1 .btnlogout a:hover{
+.contentdash .part1 .btnlogout form button:hover{
 background-color: rgb(216, 51, 84);
 color: #212121;
 
@@ -207,6 +210,14 @@ flex-direction: column;
     text-align: left;
      background-color: rgba(165, 42, 42, 0);
      padding: 20px 25px;
+     position: relative;
+
+}
+.contentdash .part2 .titleparty2 .nameAdmin{
+position: absolute;
+right: 0;
+top: 20%;
+
 }
 .contentdash .part2 .groupCart{
     width: 90%;
@@ -480,8 +491,8 @@ padding: 15px 0;
 }
 .totalUser{
     position: absolute;
-    top: -15%;
-    right: 30%;
+    top: 20%;
+    right: 5%;
     display: flex;
 width: 191px;
 height: 52px;
@@ -572,13 +583,15 @@ top: 15px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    background-color: #2ac00400;
 }
 .showUser .cartUser .abonneType ul{
 width: 80%;
 display: flex;
-justify-content: space-between;
+justify-content: start;
 align-items: center;
 background: #b7090900;
+gap: 15px;
 }
 .showUser .cartUser .abonneType ul li{
 list-style-type: none;
@@ -815,7 +828,7 @@ position: relative;
 }
 .deliveryContent .devlivItem{
     width: 311px;
-    height: 312px;
+    min-height: 300px;
     flex-shrink: 0;
     border-radius: 14px;
     background: #3C0753;
@@ -884,10 +897,29 @@ min-width: 150px;
     font-weight: 700;
     line-height: normal;
 }
+.deliveryContent .devlivItem .allbtn{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+background-color: rgba(210, 105, 30, 0);
+}
+
+.btnDelivery {
+    /* width: 100%; */
+    display: flex;
+justify-content: center;
+align-items: center;
+    flex-direction: row-reverse;
+background: #eec60000;
+padding: 15px 0;
+}
 .btnDelivery a{
     display: flex;
-width: 208px;
-height: 56px;
+width: 180px;
+height: 40px;
 padding: 5px;
 justify-content: center;
 align-items: center;
@@ -898,15 +930,43 @@ background: #2AC004;
 color: #FFF;
 text-align: center;
 font-family: var(--font_k2d);
-font-size: 22px;
+font-size: 20px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
 text-decoration: none;
 margin: auto;
 }
+.deliveryContent .devlivItem .allbtn.deletUser{
+    background-color: #84ff65;
+    }
+.deliveryContent .devlivItem .allbtn  .deletUser form button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.deliveryContent .devlivItem .allbtn  .btncheck{
+    width:100px ;
+    min-height: 50px ;
+    background: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.deliveryContent .devlivItem .allbtn  .btncheck a{
+   font-size: 20px;
+}
+.deliveryContent .devlivItem .allbtn  .btncheck:hover{
+background-color: #84FF65;
+color: #1A1B1A;
+}
 
-.deliveryContent .allCommed{
+
+
+.allCommed{
     display: inline-flex;
 padding: 10px;
 justify-content: center;
@@ -922,10 +982,10 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 position: absolute;
-right: 10%;
-top: -10%;
+right: 0%;
+top: 20%;
 }
-.deliveryContent .datatoday{
+.titleparty2 .datatoday{
     color: #FFF;
     text-align: center;
     font-family: var(--font_k2d);
@@ -935,7 +995,7 @@ top: -10%;
     line-height: normal;
 position: absolute;
 right: 30%;
-top: -8%;
+top: 35%;
 }
 /* fiish delivery client*/
 
@@ -975,7 +1035,7 @@ justify-content: center;
 
 flex-direction: column;
 
-gap: 30px;
+gap: 25px;
 
 }
 .confirContent .Conifrparty1 form input{
@@ -995,6 +1055,19 @@ border: none;
 outline: none;
 padding:0 10px;
 margin: auto;
+}
+.confirContent .Conifrparty1 form label{
+    width: 80%;
+    color: #FFF;
+text-align: center;
+font-family: var(--font_k2d);
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+color: var(--colorWhi);
+text-align: left;
+background-color: #2ac00400;
 }
 .confirContent .Conifrparty1 input::placeholder{
     color: rgba(54, 53, 53, 0.82);
@@ -1238,9 +1311,9 @@ flex-direction: row;
     padding: 5px;
 }
 .sectionMessage .contentMessage .itmmessage .Adminitmmessaage .messageAdmin{
-    margin-top: 30px;
-    width: 864px;
-    min-height: auto;
+    /* margin-top: 30px; */
+    min-width: 200px;
+    min-height: 70px;
     flex-shrink: 0;
     border-radius: 13px;
 background: rgba(82, 82, 82, 0.70);
@@ -1251,8 +1324,11 @@ font-size: 15px;
 font-style: normal;
 font-weight: 500;
 line-height: 158%;
-padding: 15px; /* 39.5px */
+padding:0 20px; /* 39.5px */
 position: relative;
+display: flex;
+justify-content: start;
+align-items: center;
 }
 .sectionMessage .contentMessage .itmmessage .Adminitmmessaage .messageAdmin .datamessageAdmin{
     color: #FFF;
@@ -1264,7 +1340,7 @@ font-weight: 500;
 line-height: 158%;
 position: absolute;
 bottom: 5%;
-right: 1%;
+right: 3%;
 }
 .sectionMessage .contentMessage .itmmessage .Useritmmessaage {
 
@@ -1290,8 +1366,8 @@ right: 1%;
 
 }
 .sectionMessage .contentMessage .itmmessage .Useritmmessaage .messageUser{
-    width: 864px;
-    min-height: auto;
+    min-width: 200px;
+    min-height: 70px;
     flex-shrink: 0;
     border-radius: 13px;
 background: rgba(82, 82, 82, 0.70);
@@ -1302,8 +1378,11 @@ font-size: 15px;
 font-style: normal;
 font-weight: 500;
 line-height: 158%;
-padding: 15px; /* 39.5px */
+padding:0 20px; /* 39.5px */
 position: relative;
+display: flex;
+justify-content: left;
+align-items: center;
 
 }
 .sectionMessage .contentMessage .itmmessage .Useritmmessaage .messageUser .datamessageUser{
@@ -1316,7 +1395,7 @@ position: relative;
     line-height: 158%;
     position: absolute;
     bottom: 5%;
-    left: 1%;
+    left: 3%;
 
 }
 .sectionMessage .newMessage{

@@ -28,36 +28,41 @@
         </div>
         <div class="btnlogout">
             {{-- <a href="{{route('logOutAdmin')}}">LOG OUT</a> --}}
-            <form style="margin-left: 60px" action="{{route('logOutAdmin')}}" method="POST">
+            <form  action="{{route('logOutAdmin')}}" method="POST">
                 @csrf
                 @method('DELETE')
-            <button> <a>LOG OUT</a></button>
+            <button>LOG OUT</button>
         </form>
         </div>
     </div>
     <div class="part2">
-        
+
         <div class="titleparty2">
-            Configure your admin profil 
+            Configure your admin profil
             @if(Session::has('success'))
                 <span style="color:rgb(74, 192, 74);margin-left:400px">
                     {{ Session::get('success') }}
                  </span>
             @endif
          </div>
-        
-       
+
+
 
         <div class="confirContent">
             <div class="Conifrparty1">
                 <form action="{{route('Configration',['idAdmin'=>$adminDa->idAdmin])}}" method="POST">
                     @csrf
                     @method('put')
+                    <label for="idAdmin">ID Admin </label>
                     <input readonly type="text" name="idAdmin" value="{{$adminDa->idAdmin}}">
+                    <label for="firstName">First name</label>
                     <input type="text" name="firstName" value="{{$adminDa->firstName}}" placeholder="First name">
+                    <label for="lastName">last name</label>
                     <input type="text" name="lastName" value="{{$adminDa->lastName}}" placeholder="last name">
+                    <label for="email">Email</label>
                     <input type="text" name="email" value="{{$adminDa->email}}" placeholder="Email">
-                    <input readonly type="text" name="password"  placeholder="You Cannot Change The Password">
+                    <label for="password">Password</label>
+                    <input readonly type="text" name="password" id="password" placeholder="You Cannot Change The Password">
                     <button type="submit" hidden id="btnEdite"></button>
 
                 </form>
