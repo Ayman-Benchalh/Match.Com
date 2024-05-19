@@ -189,7 +189,7 @@ class GlobalController extends Controller
         ]);
         
         return to_route('AllCollection',['idUser'=>$idUser  ,'dataprodt'=> $dataprodt ,'dataUser'=>$dataUser])
-                    ->withSuccess('Your payment has passed successfully , ADMIN will contact you as soon as possible');
+                    ->withSuccess('Command Paid successfully , ADMIN will contact you in a moment');
                 }
 
 

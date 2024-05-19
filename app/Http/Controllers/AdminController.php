@@ -27,15 +27,10 @@ class AdminController extends Controller
           'password'=>['required','min:8'],
       ]);
       $email = request()->email;
-      // $password = request()->password;
-      // $credentials =['email'=> $email ,'password'=>$password ];
+     
       if(auth()->guard('admin')->attempt($credentials)){
-         // dd(Auth::user());
-         // $value = $request->session()->all();
-         // if($value){
-         // dd($value); }
+        
          $dataAdmin=Admin::where('email',$email)->first();
-         // dd(Auth::check());
        return redirect()->route('indexpage');
       }else{
           return back()->withErrors([
@@ -47,7 +42,6 @@ class AdminController extends Controller
 
   public function logout_admin()  {
     
-   // request()->session()->flush();
    Auth::guard('admin')->logout();
    return redirect()->route('ladingPage');
    
@@ -141,7 +135,6 @@ class AdminController extends Controller
   
 
    public function User_dashbord(){
-      // if(Auth::guard('admin')->user()){
       $dataAdmin=Admin::where('idAdmin',Auth::user()->idAdmin)->first();
       $clients=User::all();
       $usersCount=User::count();
@@ -149,12 +142,8 @@ class AdminController extends Controller
       $data=[];
       $data['objectOne'] = $clients;
       $data['objectTwo'] = $aboType;
-      // $aboType=DB::select('SELECT * FROM products');
    return  view('Adminsession.User_dashbord',['clients'=>$clients,'userCount'=>$usersCount,'aboType'=>$aboType,'data'=>$data,'adminDa'=>$dataAdmin]);
-   // }
-   // else{
-   //    return to_route('AdminLoginPage');
-   // }
+   
    }
 
 
@@ -165,19 +154,15 @@ class AdminController extends Controller
 
 
    public function Delivery_dashbord(){
-      // if(Auth::guard('admin')->user()){
 
       $dataAdmin=Admin::where('idAdmin',Auth::user()->idAdmin)->first();
 
       $commandCount=Command::count();
-      $todaydate=date('d-m-y');
+      $todaydate=date('20y-m-d');
       $getCommands=Command::all();
       $getProduct=Command::first();
    return  view('Adminsession.Delivery_dashbord',['adminDa'=>$dataAdmin,'commands'=>$commandCount,'todaydate'=>$todaydate,'Commands'=>$getCommands,'Productdata'=>$getProduct]);
-   // }
-   // else{
-   //    return to_route('AdminLoginPage');
-   // }
+  
    }
 
    public function deleteCommand($idCommand){
@@ -193,7 +178,13 @@ class AdminController extends Controller
 
 
 
+   public function delivered($idcommand){
+      Command::where('idcommand',$idcommand)->update([
+          'statut'=>'Paid & Delivered'
+      ]);
+      return back()->withSuccess('COMMANDE DELIVERÉE');
 
+  }
 
 
 
@@ -207,16 +198,10 @@ class AdminController extends Controller
 
 
    public function Configration(){
-      // if(Auth::guard('admin')->user()){
 
       $dataAdmin=Admin::where('idAdmin',Auth::user()->idAdmin)->first();  
-      // dd($dataAdmin);
    return  view('Adminsession.Configration_page',['adminDa'=>$dataAdmin]);
-   // }
-   // else
-   // {
-   //    return to_route('AdminLoginPage');
-   // }
+
 }
 
 
@@ -251,15 +236,11 @@ class AdminController extends Controller
 
 
    public function Admin_Boite_message(string $idUser =null){
-      // $mesCom=Command::where('idcommand',$idcommand)->first();
-      // dd($mesCom);
+     
       $allUsers=User::all();
       $UserSelected=User::where('idUser',$idUser)->first();
-      // $fetchBoiteMessages=Boitdemessages::where('idUser',$idUser)->get();
       $allmessage=Boitdemessages::where('idUser',$idUser)->get();
-      // $Boitdemessages=Boitdemessages::get();
-      // dd($idUser);
-      // dd($allmessage);
+      
       return  view('Adminsession.Admin_boit_message',compact('allUsers','allmessage','UserSelected'));
    }
 
@@ -267,9 +248,7 @@ class AdminController extends Controller
 
    public function sendMessageAdmin(Request $request,$idUser){
       
-      // $allUsers=User::all();
-      // $allmessage=Boitdemessages::where('idUser',$idUser)->get();
-
+     
       $dataAdmin= Admin::all()->first();
       $messageAdmin = request()->messageAdmin;
       $dataOneUser= User::where('idUser',$idUser)->first();
@@ -286,18 +265,9 @@ class AdminController extends Controller
       ]);
       
       return back();
-      // return redirect()->route("Admin_Boite_message",compact('allUsers','allmessage'));
       
 
    }
 
-   // public function Admin_Boite_message_withUser(){
-   //    $allUsers=User::all();
-   //    return  view('Adminsession.Admin_boit_message',compact('allUsers'));
 
-   // }
-   // public function logOut(){
-   //    request()->session()->flush();
-   //    Auth::logout();
-   // }
 }

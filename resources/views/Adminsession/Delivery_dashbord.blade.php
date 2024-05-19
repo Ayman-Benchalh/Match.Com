@@ -22,8 +22,9 @@
                 <li ><a href="{{ route('indexpage') }}">Home</a></li>
                 <li ><a href="{{ route('Add_collection') }}">Add collection</a></li>
                 <li ><a href="{{ route('User_dashbord') }}">View all user</a></li>
-                <li id="focuseBnt"><a href="{{ route('Delivery_dashbord') }}">Delivery commed</a></li>
-                <li><a href="{{route('ConfigrationView')  }}">Setting</a></li>
+                <li id="focuseBnt"><a href="{{ route('Delivery_dashbord') }}">Delivery command</a></li>
+                <li><a href="#">list product</a></li>
+                <li><a href="{{route('ConfigrationView')  }}">Settings</a></li>
             </ul>
         </div>
         <div class="btnlogout">
@@ -38,7 +39,7 @@
     <div class="part2">
         <div class="titleparty2">Delivery dashbord
             @if(session('success'))
-            <div  class="messageSec">{{session('success')}} <div class="close" onclick="reloadthispage()"><i class="fa-solid fa-xmark"></i></div></div>
+            <div style="" class="messageSec">{{session('success')}} <div class="close" onclick="reloadthispage()"><i class="fa-solid fa-xmark"></i></div></div>
         @endif
         <div class="allCommed">
                     <span>
@@ -52,7 +53,7 @@
             <div class="datatoday">date d'aujourd'hui : {{$todaydate}}</div>
         </div>
         <div class="deliveryContent">
-
+            
             @foreach ($Commands as $command )
             <div class="devlivItem">
                 <div class="idcommd">
@@ -70,7 +71,16 @@
                 <div class="typeabonne">
                     <ul>
                         <li  class="textabonne">Statut :</li>
+                        @if($command->statut=='Paid & Delivered')
+                        <li style="color: #36ae18">{{$command->statut}}</li>
+                        @else
                         <li>{{$command->statut}}</li>
+                        @endif
+                    </ul>
+                </div><div class="typeabonne">
+                    <ul>
+                        <li  class="textabonne">Product ID:</li>
+                        <li>{{$command->idProduct}}</li>
                     </ul>
                 </div>
                 <div class="dataCommd">
@@ -96,17 +106,22 @@
                         </div>
 
 
-                        <div class="btnDelivery"><a href="AdminBoitemessage/{{$command->idUser}}">Delivery Commandd</a></div>
-                            <!-- if not check click -->
-                        <div class="btncheck">
-                            <a href="#"><i class="fa-solid fa-check"></i></a>
-
+                        <div class="btnDelivery">
+                            <a href="AdminBoitemessage/{{$command->idUser}}">Delivery Command</a>
                         </div>
-                           <!-- if  check -->
-                        {{-- <div class="btncheck" style="background: #84FF65">
+                            @if ($command->statut=="Paid & Delivered")
 
-                            <a href="#" ><i class="fa-solid fa-check-double"></i></a>
-                        </div> --}}
+                            <div class="btncheck" style="background: #84FF65">
+                            
+                                <a href="#" onclick="alert('DÉJA DElIVRÉ')"><i class="fa-solid fa-check-double"></i></a>
+                            
+                            </div>
+                            
+                            @else
+                              <div class="btncheck"> 
+                            <a href="{{route("delivered",[$command->idcommand])}}" onclick="return confirm('VOUS ETES SUR QUE VOUS AVEZ DELIVRÉ CETTE COMMANDE')"><i class="fa-solid fa-check"></i></a>  
+                           </div> 
+                           @endif
                 </div>
             </div>
              @endforeach

@@ -47,7 +47,6 @@ Route::get('/viewOneProduct/{idUser}/OneCollection/{idProduct}',[GlobalControlle
 Route::get('/logout',[GlobalController::class,'logout'])->name("logout");
 
 Route::post("/session/{idProduct}/{idUser}",[StripeController::class,'session'])->name('session');
-// Route::get("/success",[StripeController::class,'success'])->name('success');
 
 Route::post('/commandCollection/{idUser}/CollectionID/{idProduct}',[GlobalController::class,'commandCollection'])->name('commandCollection');
 Route::get('/commandCollection/{idUser}/CollectionID/{idProduct}',[GlobalController::class,'commandCollection'])->name('commandCollection');
@@ -86,7 +85,7 @@ Route::post("/resetPassworduser",[Forgetpasswordreset::class,'resetPassworduser'
 
 
 
-// Route::group(['middleware'=>'auth'],function () {
+
 
 Route::get('/AdminLogin',[AdminController::class,'login_Admin_page'])->name('AdminLoginPage');
 Route::post('/AdminLogin',[AdminController::class,'login_Admin'])->name('AdminLogin');
@@ -95,6 +94,9 @@ Route::middleware('auth:admin')->group(function () {
 
 Route::get('/DashbordAdmin',[AdminController::class,'index'])->name('indexpage');
 Route::get('/Addcollection',[AdminController::class,'Add_collection'])->name('Add_collection');
+
+Route::get("/delivered/{idcommand}",[AdminController::class,'delivered'])->name('delivered');
+Route::post("/delivered/{idcommand}",[AdminController::class,'delivered'])->name('delivered');
 
 Route::post('/store_product', [AdminController::class, 'store'])->name('store_product');
 Route::post('/sendMessageAdmin/{idUser}', [AdminController::class, 'sendMessageAdmin'])->name('sendMessageAdmin');
@@ -114,5 +116,3 @@ Route::delete('/AdminLogout',[AdminController::class,'logout_admin'])->name('log
 Route::fallback(function(){
     return view('pagenotfound');
 });
-
-// Route::get('/logOut',[GlobalController::class,'logOut'])->middleware(['auth'
