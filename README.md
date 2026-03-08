@@ -79,7 +79,7 @@ Libraries & Tools
 Create a folder named **screenshots** inside the project and add images.
 
 ### Homepage
-![Homepage](asset/MatchCom127-0-0-1-8000-2026-03-08-16_12_32.png)
+![Homepage](public/MatchCom127-0-0-1-8000-2026-03-08-16_12_32.png)
 
 
 
